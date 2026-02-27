@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -25,6 +25,7 @@ if (typeof window !== "undefined") {
 
 export default function Home() {
   const pageRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -94,9 +95,49 @@ export default function Home() {
           });
         });
 
+      // End of global animations
     },
     { scope: pageRef }
   );
+
+  useEffect(() => {
+    if (!cursorRef.current) return;
+
+    // Create highly performant GSAP quick setters
+    const xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.4, ease: "power3" });
+    const yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.4, ease: "power3" });
+
+    // Center the circle dynamically on its coordinates
+    gsap.set(cursorRef.current, { xPercent: -50, yPercent: -50 });
+
+    const aboutSection = document.getElementById("about");
+    if (!aboutSection) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      // Calculate coordinates relative to the absolute top of the section
+      const rect = aboutSection.getBoundingClientRect();
+      xTo(e.clientX - rect.left);
+      yTo(e.clientY - rect.top);
+    };
+
+    const handleMouseEnter = () => {
+      gsap.to(cursorRef.current, { scale: 1, autoAlpha: 1, duration: 0.4, ease: "back.out(1.5)" });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(cursorRef.current, { scale: 0, autoAlpha: 0, duration: 0.3, ease: "power3.in" });
+    };
+
+    aboutSection.addEventListener("mousemove", handleMouseMove);
+    aboutSection.addEventListener("mouseenter", handleMouseEnter);
+    aboutSection.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      aboutSection.removeEventListener("mousemove", handleMouseMove);
+      aboutSection.removeEventListener("mouseenter", handleMouseEnter);
+      aboutSection.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
 
   const distributedProducts = [
     { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577534893/WX/TD/FW/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-2-500x500.jpeg", title: "Havells Opus 8 Blade Ceiling Fan", link: "https://www.indiamart.com/proddetail/havells-opus-8-blade-ceiling-fan-2858611809533.html" },
@@ -118,6 +159,14 @@ export default function Home() {
 
   return (
     <div ref={pageRef} className="bg-background selection:bg-primary/20">
+
+      {/* ═══════════════════════════════════════════════
+          CUSTOM CURSOR (Mix Blend Mode)
+      ═══════════════════════════════════════════════ */}
+      <div
+        ref={cursorRef}
+        className="fixed left-0 top-0 w-64 h-64 bg-white rounded-full mix-blend-difference pointer-events-none z-[100] scale-0 opacity-0 hidden md:block"
+      />
 
       {/* ═══════════════════════════════════════════════
           MINIMALIST HERO SECTION
@@ -210,8 +259,17 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════
           ABOUT SECTION (Minimalist Typography Focus)
       ═══════════════════════════════════════════════ */}
-      <section id="about" className="section-padding bg-white">
-        <div className="container-custom max-w-4xl">
+      <section
+        id="about"
+        className="section-padding bg-white relative overflow-hidden"
+      >
+        {/* CUSTOM CURSOR (Mix Blend Mode) restricted to this section */}
+        <div
+          ref={cursorRef}
+          className="absolute left-0 top-0 w-64 h-64 bg-white rounded-full mix-blend-difference pointer-events-none z-[100] scale-0 opacity-0 hidden md:block"
+        />
+
+        <div className="container-custom max-w-4xl relative z-10">
           <div className="reveal-section text-center space-y-8">
             <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">
               Who We Are
