@@ -53,7 +53,7 @@ export default function About() {
                     scrollTrigger: {
                         trigger: el,
                         start: "top 95%", // More forgiving start point
-                        toggleActions: "play none none reverse",
+                        toggleActions: "play none none none",
                     },
                 });
             });
@@ -71,11 +71,18 @@ export default function About() {
                         scrollTrigger: {
                             trigger: group,
                             start: "top 95%", // More forgiving start point
-                            toggleActions: "play none none reverse",
+                            toggleActions: "play none none none",
                         },
                     });
                 }
             });
+
+            // Ensure ScrollTrigger refreshes accurately after component paint
+            const stTimeout = setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
+
+            return () => clearTimeout(stTimeout);
         },
         { scope: container }
     );

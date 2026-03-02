@@ -180,10 +180,10 @@ export default function Home() {
           </div>
 
           <h1 className="text-foreground mb-8">
-            <span className="jiggly-text block transform-origin-center">
-              Distributing Quality.
+            <span className="jiggly-text block text-primary transform-origin-center">
+              Distributing Quality
             </span>
-            <span className="jiggly-text block text-primary mt-1 transform-origin-center">
+            <span className="jiggly-text block mt-1 transform-origin-center">
               Delivering Trust.
             </span>
           </h1>
@@ -198,10 +198,10 @@ export default function Home() {
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-foreground text-background rounded-none text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors duration-300 group"
             >
               Explore Catalog
-              <ArrowRight
+              {/* <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform"
-              />
+              /> */}
             </a>
           </div>
         </div>

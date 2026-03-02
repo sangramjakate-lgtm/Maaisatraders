@@ -17,11 +17,11 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "MAAISA Group — Trusted Quality, Delivered with Care",
+  title: "Maaisa Traders India Pvt. LTD. — Trusted Quality, Delivered with Care",
   description:
     "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers and other products with effective and timely delivery.",
   keywords: [
-    "MAAISA Group",
+    "Maaisa Traders India Pvt. LTD.",
     "Maaisa Traders",
     "electric fans",
     "water heater",

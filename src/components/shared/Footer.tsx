@@ -8,7 +8,7 @@ export function Footer() {
                 {/* Company Info */}
                 <div className="space-y-4">
                     <h4 className="text-lg font-heading font-bold text-white">
-                        MAAISA Group
+                        Maaisa Traders India Pvt. LTD.
                     </h4>
                     <p className="text-sm leading-relaxed text-white/60">
                         Maaisa Traders India Pvt. Ltd. provides the best range of electric

@@ -23,8 +23,8 @@ export function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3">
                     <Image
-                        src="https://res.cloudinary.com/de6u5kbiw/image/upload/c_crop,w_300,h_100/v1760360999/clariox/WhatsApp_Image_2025-10-13_at_6.33.54_PM-removebg-preview_n4lx0h_c_crop_ar_1_1_xvp3fq.png"
-                        alt="MAAISA Group Logo"
+                        src="https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png"
+                        alt="Maaisa Traders India Pvt. LTD. Logo"
                         width={120}
                         height={40}
                         className="h-8 md:h-9 w-auto object-contain"
