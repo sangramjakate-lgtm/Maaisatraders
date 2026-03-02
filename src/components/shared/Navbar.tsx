@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 export function Navbar() {
     const pathname = usePathname();
@@ -53,6 +53,14 @@ export function Navbar() {
                 {/* CTA + Mobile Toggle */}
                 <div className="flex items-center gap-4">
                     <a
+                        href="tel:+919890200222"
+                        className="hidden md:flex items-center gap-2 text-[13px] font-semibold text-muted-foreground hover:text-primary transition-colors"
+                    >
+                        <Phone size={14} className="mt-0.5" />
+                        +91 98902 00222
+                    </a>
+
+                    <a
                         href="#contact"
                         className="hidden md:inline-flex px-6 py-2 bg-foreground text-background rounded-none text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors"
                     >
@@ -87,10 +95,19 @@ export function Navbar() {
                             {route.label}
                         </Link>
                     ))}
+
+                    <a
+                        href="tel:+919890200222"
+                        className="flex items-center gap-3 text-sm font-medium py-3 text-muted-foreground hover:text-primary transition-colors border-t border-border/40 mt-2 pt-4"
+                    >
+                        <Phone size={16} />
+                        +91 98902 00222
+                    </a>
+
                     <a
                         href="#contact"
                         onClick={() => setMobileOpen(false)}
-                        className="block w-full text-center px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium mt-2"
+                        className="block w-full text-center px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium mt-4"
                     >
                         Contact Us
                     </a>

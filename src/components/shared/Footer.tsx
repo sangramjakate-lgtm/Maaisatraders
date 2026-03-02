@@ -75,7 +75,15 @@ export function Footer() {
                         </li>
                         <li className="flex items-center gap-3 text-sm text-white/60">
                             <Mail size={16} className="shrink-0 text-white/40" />
-                            <span>info@maaisagroup.com</span>
+                            <a href="mailto:info@maaisagroup.com" className="hover:text-white transition-colors">
+                                info@maaisagroup.com
+                            </a>
+                        </li>
+                        <li className="flex items-center gap-3 text-sm text-white/60">
+                            <Phone size={16} className="shrink-0 text-white/40" />
+                            <a href="tel:+919890200222" className="hover:text-white transition-colors">
+                                +91 98902 00222
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +92,7 @@ export function Footer() {
             {/* Bottom Bar */}
             <div className="container-custom mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
                 <p>&copy; {new Date().getFullYear()} Maaisa Traders India Pvt. Ltd. All rights reserved.</p>
-                <p className="mt-2 md:mt-0">A Limited Company — Service Provider & Works Contract</p>
+                <p className="mt-2 md:mt-0">A Limited Company — Distributor and Service Provider</p>
             </div>
         </footer>
     );

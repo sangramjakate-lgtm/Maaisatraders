@@ -16,7 +16,8 @@ import {
   BadgeCheck,
   Shield,
   Calendar,
-  Users
+  Users,
+  Phone
 } from "lucide-react";
 
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
@@ -291,6 +292,18 @@ export default function Home() {
                     <p className="text-sm font-medium text-foreground">
                       info@maaisagroup.com
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <Phone size={20} className="text-primary mt-1 shrink-0" />
+                  <div>
+                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">
+                      Phone
+                    </p>
+                    <a href="tel:+919890200222" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                      +91 98902 00222
+                    </a>
                   </div>
                 </div>
               </div>
