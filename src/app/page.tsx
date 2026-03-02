@@ -162,6 +162,8 @@ export default function Home() {
         </div>
       </section>
 
+      <WhoWeAre />
+
       {/* ═══════════════════════════════════════════════
           MINIMALIST CATALOG GRID (Provided Products)
       ═══════════════════════════════════════════════ */}
@@ -210,8 +212,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <WhoWeAre />
 
       {/* ═══════════════════════════════════════════════
           COMPANY PROFILE SECTION
