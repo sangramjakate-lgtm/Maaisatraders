@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Facebook, Instagram } from "lucide-react";
 
 export function Navbar() {
     const pathname = usePathname();
@@ -52,6 +52,15 @@ export function Navbar() {
 
                 {/* CTA + Mobile Toggle */}
                 <div className="flex items-center gap-4">
+                    <div className="hidden md:flex items-center gap-4 border-r border-border/40 pr-4 mr-1">
+                        <a href="https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/?mibextid=wwXIfr&rdid=MMWA8ynUGyTeayyG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Facebook size={16} />
+                        </a>
+                        <a href="https://www.instagram.com/maaisa_group" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Instagram size={16} />
+                        </a>
+                    </div>
+
                     <a
                         href="tel:+919890200222"
                         className="hidden md:flex items-center gap-2 text-[13px] font-semibold text-muted-foreground hover:text-primary transition-colors"
@@ -111,6 +120,15 @@ export function Navbar() {
                     >
                         Contact Us
                     </a>
+
+                    <div className="flex items-center justify-center gap-6 pt-4 mt-2 border-t border-border/40">
+                        <a href="https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/?mibextid=wwXIfr&rdid=MMWA8ynUGyTeayyG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Facebook size={20} />
+                        </a>
+                        <a href="https://www.instagram.com/maaisa_group" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Instagram size={20} />
+                        </a>
+                    </div>
                 </div>
             )}
         </nav>

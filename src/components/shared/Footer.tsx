@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Building2 } from "lucide-react";
+import { MapPin, Phone, Mail, Building2, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
     return (
@@ -83,6 +83,14 @@ export function Footer() {
                             <Phone size={16} className="shrink-0 text-white/40" />
                             <a href="tel:+919890200222" className="hover:text-white transition-colors">
                                 +91 98902 00222
+                            </a>
+                        </li>
+                        <li className="flex items-center gap-4 pt-4 mt-2 border-t border-white/10 w-3/4">
+                            <a href="https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/?mibextid=wwXIfr&rdid=MMWA8ynUGyTeayyG" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                                <Facebook size={20} />
+                            </a>
+                            <a href="https://www.instagram.com/maaisa_group" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                                <Instagram size={20} />
                             </a>
                         </li>
                     </ul>
