@@ -103,6 +103,19 @@ export default function Home() {
     { scope: pageRef }
   );
 
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") || "";
+    const email = formData.get("email") || "";
+    const message = formData.get("message") || "";
+
+    const subject = "Website Inquiry: " + (name ? name : "New Contact");
+    const mailtoBody = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+
+    // Open default mail client
+    window.location.href = `mailto:info@maaisagroup.com?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
+  };
 
   const distributedProducts = [
     { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577534893/WX/TD/FW/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-2-500x500.jpeg", title: "Havells Opus 8 Blade Ceiling Fan", link: "https://www.indiamart.com/proddetail/havells-opus-8-blade-ceiling-fan-2858611809533.html" },
@@ -220,31 +233,90 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════
           COMPANY PROFILE SECTION
       ═══════════════════════════════════════════════ */}
-      <section className="section-padding bg-muted/30 border-y border-border/50">
-        <div className="container-custom">
-          <div className="reveal-section mb-14">
+      <section className="section-padding bg-muted/30 border-y border-border/50 relative overflow-hidden">
+        {/* Background Accent */}
+        <div className="absolute top-0 right-0 p-32 bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 p-32 bg-primary/5 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="container-custom relative z-10">
+          <div className="reveal-section mb-14 text-center">
             <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
               Statutory Profile
             </p>
             <h2 className="text-foreground tracking-tighter">Company Details</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm md:text-base">
+              A transparent look into our operational structure, statutory details, and the leadership driving our vision forward.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 stagger-group border-t border-border pt-12">
-            {[
-              { label: "CIN No.", value: "U51909PN2014PTC181608" },
-              { label: "Nature of Business", value: "Distributor & Service Provider" },
-              { label: "Directors", value: "Sangram Jakate & Nasir Ustaad" },
-              { label: "Head of Sales & Marketing", value: "Suresh S B, Chaitali Dhale" },
-            ].map((item, i) => (
-              <div key={i} className="stagger-card">
-                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2">
-                  {item.label}
-                </p>
-                <p className="text-base font-semibold text-foreground">
-                  {item.value}
-                </p>
+          <div className="grid md:grid-cols-3 gap-6 stagger-group">
+            {/* Bento Block 1: Massive Main Block */}
+            <div className="stagger-card group relative bg-white border border-border/60 hover:border-primary/50 p-8 md:p-10 transition-all duration-500 hover:shadow-xl overflow-hidden flex flex-col items-start md:col-span-2">
+              <div className="absolute right-0 bottom-0 p-32 bg-primary/5 rounded-tl-full group-hover:scale-110 transition-transform duration-700 ease-in-out pointer-events-none"></div>
+
+              <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-500 z-10">
+                <Building2 className="w-6 h-6" strokeWidth={1.5} />
               </div>
-            ))}
+
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2 z-10">
+                Nature of Business
+              </p>
+              <h3 className="text-2xl md:text-3xl font-light text-foreground leading-tight mb-4 z-10">
+                <span className="font-bold text-primary">Authorized</span> Premium Distributor & Service Provider
+              </h3>
+              <p className="text-sm text-muted-foreground max-w-lg z-10 leading-relaxed">
+                We handle comprehensive electrical distribution, supply chains, and specialized electrical work contracts to commercial specifications.
+              </p>
+            </div>
+
+            {/* Bento Block 2: Tall Vertical */}
+            <div className="stagger-card group relative bg-foreground border border-foreground p-8 md:p-10 transition-all duration-500 hover:shadow-xl overflow-hidden flex flex-col items-start text-background h-full">
+              <div className="absolute -left-6 -top-6 w-32 h-32 bg-white/5 rounded-full group-hover:scale-[2] transition-transform duration-700 ease-in-out pointer-events-none"></div>
+
+              <div className="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-primary transition-colors duration-500 z-10">
+                <FileText className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+
+              <p className="text-[10px] font-bold text-white/50 uppercase tracking-widest mb-2 z-10">
+                Corporate Identity
+              </p>
+              <h3 className="text-lg font-semibold text-white leading-tight mb-3 z-10 break-all">
+                U51909PN2014PTC<br />181608
+              </h3>
+              <p className="text-xs text-white/50 mt-auto pt-4 border-t border-white/10 w-full z-10">
+                Official CIN Registration
+              </p>
+            </div>
+
+            {/* Bento Block 3 */}
+            <div className="stagger-card group relative bg-white border border-border/60 hover:border-primary/50 p-8 transition-all duration-500 hover:shadow-lg overflow-hidden flex flex-col items-start h-full">
+              <div className="w-12 h-12 rounded-none bg-muted/50 text-primary flex items-center justify-center mb-6 border border-border/50 group-hover:bg-primary group-hover:text-white transition-colors duration-500 z-10">
+                <Users className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 z-10">Leadership</p>
+              <h3 className="text-base font-bold text-foreground leading-tight mb-2 group-hover:text-primary transition-colors duration-300 z-10">
+                Sangram Jakate & Nasir Ustaad
+              </h3>
+              <p className="text-[11px] text-muted-foreground/80 mt-auto pt-4 border-t border-border/40 w-full z-10 uppercase tracking-wider font-semibold">
+                Board of Directors
+              </p>
+            </div>
+
+            {/* Bento Block 4 */}
+            <div className="stagger-card group relative bg-white border border-border/60 hover:border-primary/50 p-8 transition-all duration-500 hover:shadow-lg overflow-hidden flex flex-col items-start h-full md:col-span-2">
+              <div className="w-12 h-12 rounded-none bg-muted/50 text-primary flex items-center justify-center mb-6 border border-border/50 group-hover:bg-primary group-hover:text-white transition-colors duration-500 z-10">
+                <BadgeCheck className="w-5 h-5" strokeWidth={1.5} />
+              </div>
+
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 z-10">Sales & Marketing</p>
+              <h3 className="text-base font-bold text-foreground leading-tight mb-2 group-hover:text-primary transition-colors duration-300 z-10">
+                Suresh S B & Chaitali Dhale
+              </h3>
+              <p className="text-[11px] text-muted-foreground/80 mt-auto pt-4 border-t border-border/40 w-full z-10 uppercase tracking-wider font-semibold">
+                Department Heads
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -311,10 +383,12 @@ export default function Home() {
 
             {/* Form */}
             <div className="reveal-section">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleContactSubmit}>
                 <div className="border-b border-border focus-within:border-primary transition-colors">
                   <input
                     type="text"
+                    name="name"
+                    required
                     placeholder="Name"
                     className="w-full py-3 bg-transparent text-sm font-medium focus:outline-none placeholder:text-muted-foreground/50"
                   />
@@ -322,12 +396,16 @@ export default function Home() {
                 <div className="border-b border-border focus-within:border-primary transition-colors">
                   <input
                     type="email"
+                    name="email"
+                    required
                     placeholder="Email Address"
                     className="w-full py-3 bg-transparent text-sm font-medium focus:outline-none placeholder:text-muted-foreground/50"
                   />
                 </div>
                 <div className="border-b border-border focus-within:border-primary transition-colors">
                   <textarea
+                    name="message"
+                    required
                     placeholder="Message"
                     rows={1}
                     className="w-full pt-3 pb-8 bg-transparent text-sm font-medium focus:outline-none resize-none placeholder:text-muted-foreground/50"
