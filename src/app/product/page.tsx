@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ArrowRight, Filter } from "lucide-react";
 
 import { allProducts } from "@/lib/products";
+import { BrandGrid } from "@/components/sections/BrandGrid";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -77,10 +78,12 @@ export default function Product() {
     return (
         <section ref={containerRef} className="bg-background min-h-screen">
 
+            <BrandGrid />
+
             {/* ═══════════════════════════════════════════════
                HERO & FILTER HEADER
             ═══════════════════════════════════════════════ */}
-            <div className="pt-24 pb-12 bg-muted/20 border-b border-border/50">
+            <div className="pt-16 pb-12 bg-muted/20 border-b border-border/50">
                 <div className="container-custom max-w-5xl text-center">
                     <div className="page-badge inline-flex items-center gap-2 px-3 py-1 rounded-none border-b border-primary/30 text-primary text-[10px] uppercase tracking-[0.2em] font-bold mb-8">
                         Product Catalog
