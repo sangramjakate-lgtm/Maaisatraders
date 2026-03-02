@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
+import { BrandSlider } from "@/components/sections/BrandSlider";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -163,6 +164,8 @@ export default function Home() {
       </section>
 
       <WhoWeAre />
+
+      <BrandSlider />
 
       {/* ═══════════════════════════════════════════════
           MINIMALIST CATALOG GRID (Provided Products)
