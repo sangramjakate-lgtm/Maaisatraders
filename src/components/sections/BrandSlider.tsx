@@ -31,10 +31,10 @@ export function BrandSlider() {
                 <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
-                <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-12 md:gap-24 items-center px-6">
+                <div className="flex w-max animate-marquee gap-12 md:gap-24 items-center px-6">
                     {/* First Map */}
                     {brands.map((brand, idx) => (
-                        <div key={`brand-1-${idx}`} className="flex-shrink-0 w-32 md:w-48 h-20 md:h-24 relative opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <div key={`brand-1-${idx}`} className="flex-shrink-0 w-40 md:w-56 h-28 md:h-32 relative transition-transform duration-300 hover:scale-105">
                             <Image
                                 src={brand.url}
                                 alt={`${brand.name} Logo`}
@@ -46,7 +46,7 @@ export function BrandSlider() {
                     ))}
                     {/* Second Map (Duplicate for infinite seamless scrolling) */}
                     {brands.map((brand, idx) => (
-                        <div key={`brand-2-${idx}`} className="flex-shrink-0 w-32 md:w-48 h-20 md:h-24 relative opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <div key={`brand-2-${idx}`} className="flex-shrink-0 w-40 md:w-56 h-28 md:h-32 relative transition-transform duration-300 hover:scale-105">
                             <Image
                                 src={brand.url}
                                 alt={`${brand.name} Logo`}
