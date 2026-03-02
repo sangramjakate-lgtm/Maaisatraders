@@ -17,7 +17,6 @@ export function Footer() {
                     </p>
                     <div className="pt-2 space-y-1 text-xs text-white/40">
                         <p>CIN: U51909PN2014PTC181608</p>
-                        <p>GST: 27AAMCM3868P1ZH</p>
                     </div>
                 </div>
 
