@@ -296,11 +296,12 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 stagger-group border-t border-border pt-12">
             {[
               { label: "GST No.", value: "27AAMCM3868P1ZH" },
-              { label: "CIN No.", value: "U51909PN2019PTC181608" },
+              { label: "CIN No.", value: "U51909PN2014PTC181608" },
               { label: "Nature of Business", value: "Distributor & Service Provider" },
               { label: "Annual Turnover", value: "40 L - 1.5 Cr" },
-              { label: "GST Registration Date", value: "29-08-2019" },
-              { label: "CEO / Partners", value: "Chaitali Dhale, Sangram Jakate, Nasir Patil" },
+              { label: "GST Registration Date", value: "29-08-2014" },
+              { label: "Directors", value: "Sangram Jakate & Nasir Ustaad" },
+              { label: "Head of Sales & Marketing", value: "Suresh S B, Chaitali Dhale" },
             ].map((item, i) => (
               <div key={i} className="stagger-card">
                 <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-2">

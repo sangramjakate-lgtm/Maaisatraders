@@ -126,7 +126,7 @@ export default function About() {
                             </h2>
                             <div className="space-y-4 text-muted-foreground leading-relaxed pt-4">
                                 <p>
-                                    Founded in 2019, our core mission has always been to streamline the supply chain for high-quality electronics and home appliances. We pride ourselves on maintaining an agile inventory and ensuring timely deliveries to all our partners in the retail sector.
+                                    Founded in 2014, our core mission has always been to streamline the supply chain for high-quality electronics and home appliances. We pride ourselves on maintaining an agile inventory and ensuring timely deliveries to all our partners in the retail sector.
                                 </p>
                                 <p>
                                     As an authorized distributor for leading brands like Havells, we uphold stringent quality standards, ensuring that every product that leaves our warehouse meets the expectations of the end consumer.
@@ -195,10 +195,14 @@ export default function About() {
                         <h2 className="text-foreground tracking-tighter mb-6">Leadership</h2>
                         <p className="text-muted-foreground leading-relaxed text-lg mb-8">
                             Guided by the vision of our Directors: <br />
-                            <strong className="text-foreground font-semibold">Chaitali Dhale, Sangram Jakate, and Nasir Patil</strong>.
+                            <strong className="text-foreground font-semibold">Sangram Jakate & Nasir Ustaad</strong>.
+                            <br />
+                            <span className="text-sm mt-3 block">
+                                Head of Sales & Marketing: <strong className="text-foreground font-semibold">Suresh S B, Chaitali Dhale</strong>
+                            </span>
                         </p>
                         <div className="inline-block border border-border bg-white px-6 py-3 text-sm font-bold uppercase tracking-widest text-foreground shadow-sm">
-                            Est. 2019
+                            Est. 2014
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ export function Footer() {
                         products with effective & timely delivery.
                     </p>
                     <div className="pt-2 space-y-1 text-xs text-white/40">
-                        <p>CIN: U51909PN2019PTC181608</p>
+                        <p>CIN: U51909PN2014PTC181608</p>
                         <p>GST: 27AAMCM3868P1ZH</p>
                     </div>
                 </div>
@@ -67,9 +67,12 @@ export function Footer() {
                                 Tathawade, Pimpri Chinchwad, Pune – 411033, Maharashtra
                             </span>
                         </li>
-                        <li className="flex items-center gap-3 text-sm text-white/60">
-                            <Building2 size={16} className="shrink-0 text-white/40" />
-                            <span>Chaitali Dhale (CEO)</span>
+                        <li className="flex items-start gap-3 text-sm text-white/60">
+                            <Building2 size={16} className="shrink-0 text-white/40 mt-1" />
+                            <div className="flex flex-col gap-1">
+                                <span>Sangram Jakate & Nasir Ustaad (Directors)</span>
+                                <span>Suresh S B, Chaitali Dhale (Head of Sales & Marketing)</span>
+                            </div>
                         </li>
                         <li className="flex items-center gap-3 text-sm text-white/60">
                             <Mail size={16} className="shrink-0 text-white/40" />
