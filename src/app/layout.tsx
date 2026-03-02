@@ -18,9 +18,13 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Maaisa Traders India Pvt. LTD. — Authorized Distribution & Electric Works",
+  metadataBase: new URL("https://maaisagroup.com"), // Update with actual domain
+  title: {
+    default: "Maaisa Traders India Pvt. LTD. — Authorized Distribution & Electric Works",
+    template: "%s | Maaisa Traders India"
+  },
   description:
-    "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers, and elite electric work with effective and timely delivery.",
+    "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers, and elite electric work with effective and timely delivery in Maharashtra.",
   keywords: [
     "Maaisa Traders India Pvt. LTD.",
     "Authorized Dealer",
@@ -30,7 +34,53 @@ export const metadata: Metadata = {
     "electric fans",
     "water heater",
     "Pune",
+    "Maharashtra"
   ],
+  authors: [{ name: "Maaisa Traders" }],
+  creator: "Maaisa Traders",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://maaisagroup.com",
+    siteName: "Maaisa Traders India",
+    title: "Maaisa Traders India Pvt. LTD. — Authorized Distribution",
+    description: "Premium Distributors of industry-leading electric fans, water heaters, and purifiers across Maharashtra.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png",
+        width: 1200,
+        height: 630,
+        alt: "Maaisa Traders India Pvt. LTD. Corporate Board",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maaisa Traders India Pvt. LTD.",
+    description: "Premium Distributors for Havells, Legrand, Polycab and more.",
+    images: ["https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png"],
+  },
+  icons: {
+    icon: [
+      { url: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png", sizes: "32x32" },
+      { url: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png", sizes: "192x192" }
+    ],
+    apple: [
+      { url: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png" }
+    ]
+  },
+  manifest: "/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    }
+  }
 };
 
 export default function RootLayout({
