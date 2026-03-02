@@ -45,35 +45,41 @@ export default function About() {
 
             // Scroll-triggered sections
             gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((el) => {
-                gsap.from(el, {
-                    y: 60,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "elastic.out(1, 0.8)",
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 95%", // More forgiving start point
-                        toggleActions: "play none none none",
-                    },
-                });
+                gsap.fromTo(el,
+                    { y: 60, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: "elastic.out(1, 0.8)",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 95%", // More forgiving start point
+                            toggleActions: "play none none none",
+                        },
+                    }
+                );
             });
 
             // Staggered cards
             gsap.utils.toArray<HTMLElement>(".stagger-group").forEach((group) => {
                 const cards = group.querySelectorAll(".stagger-card");
                 if (cards.length > 0) {
-                    gsap.from(cards, {
-                        y: 50,
-                        opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.1,
-                        ease: "back.out(1.4)",
-                        scrollTrigger: {
-                            trigger: group,
-                            start: "top 95%", // More forgiving start point
-                            toggleActions: "play none none none",
-                        },
-                    });
+                    gsap.fromTo(cards,
+                        { y: 50, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            stagger: 0.1,
+                            ease: "back.out(1.4)",
+                            scrollTrigger: {
+                                trigger: group,
+                                start: "top 95%", // More forgiving start point
+                                toggleActions: "play none none none",
+                            },
+                        }
+                    );
                 }
             });
 
@@ -99,18 +105,18 @@ export default function About() {
                         About Our Company
                     </div>
 
-                    <h1 className="text-foreground mb-8">
+                    <h1 className="text-foreground mb-8 text-4xl md:text-6xl tracking-tighter">
                         <span className="jiggly-text block transform-origin-center">
                             A Legacy Of
                         </span>
-                        <span className="jiggly-text block text-primary mt-1 transform-origin-center">
-                            Distribution Excellence.
+                        <span className="jiggly-text block text-primary mt-1 transform-origin-center font-extrabold">
+                            Authorized Distribution.
                         </span>
                     </h1>
 
                     <p className="hero-subtitle text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Maaisa Traders India Pvt. Ltd. is a premier distributor based in Pune,
-                        committed to delivering top-tier home appliances with uncompromising efficiency.
+                        Maaisa Traders India Pvt. Ltd. is a premier <strong className="text-foreground">Authorized Dealer</strong> based in Pune,
+                        specializing in top-tier <strong className="text-foreground">electricals</strong> and comprehensive <strong className="text-foreground">electric work</strong> with uncompromising efficiency.
                     </p>
                 </div>
             </section>
@@ -121,15 +127,15 @@ export default function About() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div className="reveal-section space-y-6">
                             <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">Our Mission</p>
-                            <h2 className="text-foreground tracking-tighter leading-tight font-light">
-                                Bridging the gap between <span className="font-bold">premium brands</span> and <span className="font-bold">consumers.</span>
+                            <h2 className="text-foreground tracking-tighter leading-tight font-light text-3xl md:text-4xl">
+                                Elevating infrastructure through <span className="font-bold text-primary">premium electricals</span> and <span className="font-bold">expert electric work.</span>
                             </h2>
                             <div className="space-y-4 text-muted-foreground leading-relaxed pt-4">
                                 <p>
-                                    Founded in 2014, our core mission has always been to streamline the supply chain for high-quality electronics and home appliances. We pride ourselves on maintaining an agile inventory and ensuring timely deliveries to all our partners in the retail sector.
+                                    Founded in 2014, our core mission has always been to streamline the supply chain for high-quality electronics and electrical appliances. As <strong className="text-foreground">Authorized Dealers</strong>, we pride ourselves on maintaining an agile inventory and ensuring timely deliveries to all our partners in the retail and contracting sectors.
                                 </p>
                                 <p>
-                                    As an authorized distributor for leading brands like Havells, we uphold stringent quality standards, ensuring that every product that leaves our warehouse meets the expectations of the end consumer.
+                                    Whether it's deploying industrial-grade <strong className="text-foreground">electricals</strong> or managing precise <strong className="text-foreground">electric work</strong>, we uphold stringent quality standards, ensuring that every product that leaves our warehouse meets the expectations of the end consumer and industry professionals alike.
                                 </p>
                             </div>
                         </div>

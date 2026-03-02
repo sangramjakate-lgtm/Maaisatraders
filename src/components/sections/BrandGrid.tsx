@@ -14,8 +14,8 @@ const brands = [
     { name: "Usha", url: "https://images.seeklogo.com/logo-png/34/2/usha-logo-png_seeklogo-347449.png" },
     { name: "Havells", url: "https://www.logo.wine/a/logo/Havells/Havells-Logo.wine.svg" },
     { name: "Polycab", url: "https://www.wirecable.in/wp-content/uploads/2023/09/polycab-logo.jpg" },
-    { name: "Brand4", url: "https://p7.hiclipart.com/preview/40/38/430/5bfa9b3d70512.jpg" },
-    { name: "Legrand", url: "https://e7.pngegg.com/pngimages/317/720/png-clipart-logo-legrand-electricals-brand-graphics-general-electric-text-logo.png" },
+    { name: "Wipro", url: "https://companieslogo.com/img/orig/WIT-1453b096.png" },
+    { name: "Legrand", url: "https://1000logos.net/wp-content/uploads/2020/08/Legrand-Logo.png" },
     { name: "Crompton", url: "https://vectorseek.com/wp-content/uploads/2023/10/Crompton-Logo-Vector.svg-.png" },
     { name: "Apar", url: "https://companieslogo.com/img/orig/APARINDS.NS_BIG-0ae30472.png?t=1720244490" },
     { name: "Schneider", url: "https://www.logo.wine/a/logo/Schneider_Electric/Schneider_Electric-Logo.wine.svg" }

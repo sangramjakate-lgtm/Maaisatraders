@@ -138,15 +138,15 @@ export default function Home() {
 
           <h1 className="text-foreground mb-8">
             <span className="jiggly-text block text-primary transform-origin-center">
-              Distributing Quality
+              Authorized Dealers.
             </span>
             <span className="jiggly-text block mt-1 transform-origin-center">
-              Delivering Trust.
+              Electrical Experts.
             </span>
           </h1>
 
           <p className="hero-subtitle text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12 font-medium">
-            Premier distributors of industry-leading electric fans, water heaters, and purifiers across Maharashtra.
+            Premier authorized dealers and distributors specializing in <span className="text-foreground font-semibold">electricals</span> and comprehensive <span className="text-foreground font-semibold">electric work</span> across Maharashtra.
           </p>
 
           <div className="hero-cta flex justify-center">

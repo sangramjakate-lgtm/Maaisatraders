@@ -3,6 +3,7 @@ import { Montserrat, Lato } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
+import { ScrollToTop } from "@/components/shared/ScrollToTop";
 
 const montserrat = Montserrat({
   variable: "--font-heading",
@@ -17,16 +18,17 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Maaisa Traders India Pvt. LTD. — Trusted Quality, Delivered with Care",
+  title: "Maaisa Traders India Pvt. LTD. — Authorized Distribution & Electric Works",
   description:
-    "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers and other products with effective and timely delivery.",
+    "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers, and elite electric work with effective and timely delivery.",
   keywords: [
     "Maaisa Traders India Pvt. LTD.",
-    "Maaisa Traders",
+    "Authorized Dealer",
+    "Electric Work",
+    "Electricals",
+    "Premium Distributor",
     "electric fans",
     "water heater",
-    "geyser",
-    "water purifier",
     "Pune",
   ],
 };
@@ -42,6 +44,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${lato.variable} antialiased min-h-screen flex flex-col font-body`}
         suppressHydrationWarning
       >
+        <ScrollToTop />
         <Navbar />
         <main className="flex-1 pt-16">
           {children}
