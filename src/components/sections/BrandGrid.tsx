@@ -18,7 +18,8 @@ const brands = [
     { name: "Legrand", url: "https://1000logos.net/wp-content/uploads/2020/08/Legrand-Logo.png" },
     { name: "Crompton", url: "https://vectorseek.com/wp-content/uploads/2023/10/Crompton-Logo-Vector.svg-.png" },
     { name: "Apar", url: "https://companieslogo.com/img/orig/APARINDS.NS_BIG-0ae30472.png?t=1720244490" },
-    { name: "Schneider", url: "https://www.logo.wine/a/logo/Schneider_Electric/Schneider_Electric-Logo.wine.svg" }
+    { name: "Schneider", url: "https://www.logo.wine/a/logo/Schneider_Electric/Schneider_Electric-Logo.wine.svg" },
+    { name: "Atomberg", url: "https://brandlogos.net/wp-content/uploads/2023/10/atomberg-logo_brandlogos.net_3z2cw.png" }
 ];
 
 export function BrandGrid() {
@@ -50,7 +51,7 @@ export function BrandGrid() {
                         Industry Partners
                     </div>
                     <h2 className="text-3xl md:text-5xl font-light tracking-tighter text-foreground mb-6 leading-tight">
-                        <span className="font-bold text-primary">Authorized</span> Dealers & <br className="hidden md:block" /> Associated Brands
+                        <span className="font-bold text-primary">Authorized</span> Distributors & <br className="hidden md:block" /> Associated Brands
                     </h2>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                         We partner with top-tier global manufacturers to deliver uncompromising quality, durable electrics, and cutting-edge innovations directly to your infrastructure.

@@ -115,7 +115,7 @@ export default function About() {
                     </h1>
 
                     <p className="hero-subtitle text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Maaisa Traders India Pvt. Ltd. is a premier <strong className="text-foreground">Authorized Dealer</strong> based in Pune,
+                        Maaisa Traders India Pvt. Ltd. is a premier <strong className="text-foreground">Authorized Distributor</strong> based in Pune,
                         specializing in top-tier <strong className="text-foreground">electricals</strong> and comprehensive <strong className="text-foreground">electric work</strong> with uncompromising efficiency.
                     </p>
                 </div>
@@ -132,7 +132,7 @@ export default function About() {
                             </h2>
                             <div className="space-y-4 text-muted-foreground leading-relaxed pt-4">
                                 <p>
-                                    Founded in 2014, our core mission has always been to streamline the supply chain for high-quality electronics and electrical appliances. As <strong className="text-foreground">Authorized Dealers</strong>, we pride ourselves on maintaining an agile inventory and ensuring timely deliveries to all our partners in the retail and contracting sectors.
+                                    Founded in 2014, our core mission has always been to streamline the supply chain for high-quality electronics and electrical appliances. As <strong className="text-foreground">Authorized Distributors</strong>, we pride ourselves on maintaining an agile inventory and ensuring timely deliveries to all our partners in the retail and contracting sectors.
                                 </p>
                                 <p>
                                     Whether it's deploying industrial-grade <strong className="text-foreground">electricals</strong> or managing precise <strong className="text-foreground">electric work</strong>, we uphold stringent quality standards, ensuring that every product that leaves our warehouse meets the expectations of the end consumer and industry professionals alike.
@@ -201,10 +201,11 @@ export default function About() {
                         <h2 className="text-foreground tracking-tighter mb-6">Leadership</h2>
                         <p className="text-muted-foreground leading-relaxed text-lg mb-8">
                             Guided by the vision of our Directors: <br />
-                            <strong className="text-foreground font-semibold">Sangram Jakate & Nasir Ustaad</strong>.
+                            <strong className="text-foreground font-semibold">Sangram Jakate & Nasir Patil</strong>.
                             <br />
-                            <span className="text-sm mt-3 block">
-                                Head of Sales & Marketing: <strong className="text-foreground font-semibold">Suresh S B, Chaitali Dhale</strong>
+                            <span className="text-sm mt-3 block space-y-1">
+                                <span>Head of Sales & Marketing: <strong className="text-foreground font-semibold">Suresh S B</strong></span><br />
+                                <span>Administration Head: <strong className="text-foreground font-semibold">Chaitali Dhale</strong></span>
                             </span>
                         </p>
                         <div className="inline-block border border-border bg-white px-6 py-3 text-sm font-bold uppercase tracking-widest text-foreground shadow-sm">

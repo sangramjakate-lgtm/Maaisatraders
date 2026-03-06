@@ -114,7 +114,7 @@ export default function Home() {
     const mailtoBody = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
 
     // Open default mail client
-    window.location.href = `mailto:info@maaisagroup.com?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
+    window.location.href = `mailto:info@maaisatraders.com?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
   };
 
   const distributedProducts = [
@@ -151,7 +151,7 @@ export default function Home() {
 
           <h1 className="text-foreground mb-8">
             <span className="jiggly-text block text-primary transform-origin-center">
-              Authorized Dealers.
+              Authorized Distributors.
             </span>
             <span className="jiggly-text block mt-1 transform-origin-center">
               Electrical Experts.
@@ -159,7 +159,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-subtitle text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12 font-medium">
-            Premier authorized dealers and distributors specializing in <span className="text-foreground font-semibold">electricals</span> and comprehensive <span className="text-foreground font-semibold">electric work</span> across Maharashtra.
+            Premier authorized distributors specializing in <span className="text-foreground font-semibold">electricals</span> and comprehensive <span className="text-foreground font-semibold">electric work</span> across Maharashtra.
           </p>
 
           <div className="hero-cta flex justify-center">
@@ -296,7 +296,7 @@ export default function Home() {
 
               <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 z-10">Leadership</p>
               <h3 className="text-base font-bold text-foreground leading-tight mb-2 group-hover:text-primary transition-colors duration-300 z-10">
-                Sangram Jakate & Nasir Ustaad
+                Sangram Jakate & Nasir Patil
               </h3>
               <p className="text-[11px] text-muted-foreground/80 mt-auto pt-4 border-t border-border/40 w-full z-10 uppercase tracking-wider font-semibold">
                 Board of Directors
@@ -309,12 +309,13 @@ export default function Home() {
                 <BadgeCheck className="w-5 h-5" strokeWidth={1.5} />
               </div>
 
-              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 z-10">Sales & Marketing</p>
-              <h3 className="text-base font-bold text-foreground leading-tight mb-2 group-hover:text-primary transition-colors duration-300 z-10">
-                Suresh S B & Chaitali Dhale
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 z-10">Department Heads</p>
+              <h3 className="text-base font-bold text-foreground leading-tight mb-2 transition-colors duration-300 z-10 flex flex-col gap-1 mt-2">
+                <span className="group-hover:text-primary transition-colors">Suresh S B <span className="text-xs text-muted-foreground font-normal">(Sales & Marketing)</span></span>
+                <span className="group-hover:text-primary transition-colors">Chaitali Dhale <span className="text-xs text-muted-foreground font-normal">(Administration Head)</span></span>
               </h3>
-              <p className="text-[11px] text-muted-foreground/80 mt-auto pt-4 border-t border-border/40 w-full z-10 uppercase tracking-wider font-semibold">
-                Department Heads
+              <p className="text-[11px] text-muted-foreground/80 mt-auto pt-3 border-t border-border/40 w-full z-10 uppercase tracking-wider font-semibold">
+                Core Operations
               </p>
             </div>
           </div>
@@ -362,7 +363,7 @@ export default function Home() {
                       Email Inquiries
                     </p>
                     <p className="text-sm font-medium text-foreground">
-                      info@maaisagroup.com
+                      info@maaisatraders.com
                     </p>
                   </div>
                 </div>

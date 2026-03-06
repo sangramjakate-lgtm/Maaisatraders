@@ -8,7 +8,8 @@ const brands = [
     { name: "Legrand", url: "https://1000logos.net/wp-content/uploads/2020/08/Legrand-Logo.png" },
     { name: "Crompton", url: "https://vectorseek.com/wp-content/uploads/2023/10/Crompton-Logo-Vector.svg-.png" },
     { name: "Apar", url: "https://companieslogo.com/img/orig/APARINDS.NS_BIG-0ae30472.png?t=1720244490" },
-    { name: "Schneider", url: "https://www.logo.wine/a/logo/Schneider_Electric/Schneider_Electric-Logo.wine.svg" }
+    { name: "Schneider", url: "https://www.logo.wine/a/logo/Schneider_Electric/Schneider_Electric-Logo.wine.svg" },
+    { name: "Atomberg", url: "https://brandlogos.net/wp-content/uploads/2023/10/atomberg-logo_brandlogos.net_3z2cw.png" }
 ];
 
 export function BrandSlider() {

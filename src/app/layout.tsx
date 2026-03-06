@@ -18,7 +18,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maaisagroup.com"), // Update with actual domain
+  metadataBase: new URL("https://maaisatraders.com"), // Update with actual domain
   title: {
     default: "Maaisa Traders India Pvt. LTD. — Authorized Distribution & Electric Works",
     template: "%s | Maaisa Traders India"
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers, and elite electric work with effective and timely delivery in Maharashtra.",
   keywords: [
     "Maaisa Traders India Pvt. LTD.",
-    "Authorized Dealer",
+    "Authorized Distributor",
     "Electric Work",
     "Electricals",
     "Premium Distributor",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://maaisagroup.com",
+    url: "https://maaisatraders.com",
     siteName: "Maaisa Traders India",
     title: "Maaisa Traders India Pvt. LTD. — Authorized Distribution",
     description: "Premium Distributors of industry-leading electric fans, water heaters, and purifiers across Maharashtra.",

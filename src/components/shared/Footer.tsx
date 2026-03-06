@@ -69,14 +69,15 @@ export function Footer() {
                         <li className="flex items-start gap-3 text-sm text-white/60">
                             <Building2 size={16} className="shrink-0 text-white/40 mt-1" />
                             <div className="flex flex-col gap-1">
-                                <span>Sangram Jakate & Nasir Ustaad (Directors)</span>
-                                <span>Suresh S B, Chaitali Dhale (Head of Sales & Marketing)</span>
+                                <span>Sangram Jakate & Nasir Patil (Directors)</span>
+                                <span>Suresh S B (Head of Sales & Marketing)</span>
+                                <span>Chaitali Dhale (Administration Head)</span>
                             </div>
                         </li>
                         <li className="flex items-center gap-3 text-sm text-white/60">
                             <Mail size={16} className="shrink-0 text-white/40" />
-                            <a href="mailto:info@maaisagroup.com" className="hover:text-white transition-colors">
-                                info@maaisagroup.com
+                            <a href="mailto:info@maaisatraders.com" className="hover:text-white transition-colors">
+                                info@maaisatraders.com
                             </a>
                         </li>
                         <li className="flex items-center gap-3 text-sm text-white/60">
@@ -89,7 +90,7 @@ export function Footer() {
                             <a href="https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/?mibextid=wwXIfr&rdid=MMWA8ynUGyTeayyG" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
                                 <Facebook size={20} />
                             </a>
-                            <a href="https://www.instagram.com/maaisa_group" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+                            <a href="https://www.instagram.com/maaisatraderspvtltd?igsh=MXFrNTZudGpxcno5" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
                                 <Instagram size={20} />
                             </a>
                         </li>

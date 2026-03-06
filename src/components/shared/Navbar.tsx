@@ -56,7 +56,7 @@ export function Navbar() {
                         <a href="https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/?mibextid=wwXIfr&rdid=MMWA8ynUGyTeayyG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <Facebook size={16} />
                         </a>
-                        <a href="https://www.instagram.com/maaisa_group" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a href="https://www.instagram.com/maaisatraderspvtltd?igsh=MXFrNTZudGpxcno5" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <Instagram size={16} />
                         </a>
                     </div>
@@ -125,7 +125,7 @@ export function Navbar() {
                         <a href="https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/?mibextid=wwXIfr&rdid=MMWA8ynUGyTeayyG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <Facebook size={20} />
                         </a>
-                        <a href="https://www.instagram.com/maaisa_group" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a href="https://www.instagram.com/maaisatraderspvtltd?igsh=MXFrNTZudGpxcno5" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                             <Instagram size={20} />
                         </a>
                     </div>
