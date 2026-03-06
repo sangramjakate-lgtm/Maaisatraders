@@ -66,17 +66,20 @@ export default function Home() {
 
       // Scroll-triggered sections with jiggly/smooth reveals
       gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((el) => {
-        gsap.from(el, {
-          y: 60,
-          opacity: 0,
-          duration: 1,
-          ease: "elastic.out(1, 0.8)",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
+        gsap.fromTo(el,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "elastic.out(1, 0.8)",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 95%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
       });
 
       // Staggered image/product cards
@@ -84,21 +87,31 @@ export default function Home() {
         .toArray<HTMLElement>(".stagger-group")
         .forEach((group) => {
           const cards = group.querySelectorAll(".stagger-card");
-          gsap.from(cards, {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "back.out(1.4)",
-            scrollTrigger: {
-              trigger: group,
-              start: "top 85%",
-              toggleActions: "play none none reverse",
-            },
-          });
+          if (cards.length > 0) {
+            gsap.fromTo(cards,
+              { y: 50, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.4)",
+                scrollTrigger: {
+                  trigger: group,
+                  start: "top 95%",
+                  toggleActions: "play none none none",
+                },
+              }
+            );
+          }
         });
 
-      // End of global animations
+      // Ensure ScrollTrigger refreshes accurately after component paint
+      const stTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
+
+      return () => clearTimeout(stTimeout);
     },
     { scope: pageRef }
   );
