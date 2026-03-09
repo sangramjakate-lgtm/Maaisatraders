@@ -190,9 +190,9 @@ export default function Home() {
         </div>
       </section>
 
-      <WhoWeAre />
-
       <BrandSlider />
+
+      <WhoWeAre />
 
       {/* ═══════════════════════════════════════════════
           MINIMALIST CATALOG GRID (Provided Products)
