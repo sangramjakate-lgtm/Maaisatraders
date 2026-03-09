@@ -324,7 +324,7 @@ export default function Home() {
 
               <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-1 z-10">Department Heads</p>
               <h3 className="text-base font-bold text-foreground leading-tight mb-2 transition-colors duration-300 z-10 flex flex-col gap-1 mt-2">
-                <span className="group-hover:text-primary transition-colors">Suresh S B <span className="text-xs text-muted-foreground font-normal">(Sales & Marketing)</span></span>
+                <span className="group-hover:text-primary transition-colors">Suresh S B <span className="text-xs text-muted-foreground font-normal">(Head of Sales & Marketing)</span></span>
                 <span className="group-hover:text-primary transition-colors">Chaitali Dhale <span className="text-xs text-muted-foreground font-normal">(Administration Head)</span></span>
               </h3>
               <p className="text-[11px] text-muted-foreground/80 mt-auto pt-3 border-t border-border/40 w-full z-10 uppercase tracking-wider font-semibold">

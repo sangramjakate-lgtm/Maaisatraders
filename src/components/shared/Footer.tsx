@@ -56,7 +56,7 @@ export function Footer() {
                 {/* Reach Us */}
                 <div>
                     <h4 className="text-lg font-heading font-bold text-white mb-4">
-                        Reach Us
+                        Connect with Us
                     </h4>
                     <ul className="space-y-4">
                         <li className="flex items-start gap-3 text-sm text-white/60">
@@ -66,14 +66,14 @@ export function Footer() {
                                 Tathawade, Pimpri Chinchwad, Pune – 411033, Maharashtra
                             </span>
                         </li>
-                        <li className="flex items-start gap-3 text-sm text-white/60">
+                        {/* <li className="flex items-start gap-3 text-sm text-white/60">
                             <Building2 size={16} className="shrink-0 text-white/40 mt-1" />
                             <div className="flex flex-col gap-1">
                                 <span>Sangram Jakate & Nasir Patil (Directors)</span>
                                 <span>Suresh S B (Head of Sales & Marketing)</span>
                                 <span>Chaitali Dhale (Administration Head)</span>
                             </div>
-                        </li>
+                        </li> */}
                         <li className="flex items-center gap-3 text-sm text-white/60">
                             <Mail size={16} className="shrink-0 text-white/40" />
                             <a href="mailto:info@maaisatraders.com" className="hover:text-white transition-colors">
