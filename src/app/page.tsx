@@ -22,6 +22,7 @@ import {
 
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { BrandSlider } from "@/components/sections/BrandSlider";
+import { ProductCategories } from "@/components/sections/ProductCategories";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -193,6 +194,10 @@ export default function Home() {
       <BrandSlider />
 
       <WhoWeAre />
+
+      <div id="products">
+        <ProductCategories />
+      </div>
 
       {/* ═══════════════════════════════════════════════
           MINIMALIST CATALOG GRID (Provided Products)
