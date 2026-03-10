@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { categories } from "@/data/categories";
 
@@ -225,10 +226,12 @@ export function ProductCategories() {
                                     className="cat-img relative z-10"
                                     style={{ width: "min(72%, 340px)", aspectRatio: "1 / 1" }}
                                 >
-                                    <img
+                                    <Image
                                         src={cat.categoryImage}
-                                        alt={cat.name}
-                                        className="w-full h-full object-contain"
+                                        alt={`${cat.name} Authorized Distribution Pune`}
+                                        fill
+                                        className="object-contain"
+                                        unoptimized
                                     />
                                 </div>
 

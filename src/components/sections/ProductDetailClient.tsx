@@ -19,6 +19,7 @@ import { Product } from "@/lib/products";
 import { Category } from "@/data/categories";
 import { CategoryProductGrid } from "@/components/sections/CategoryProductGrid";
 import { ProductPageCategories } from "@/components/sections/ProductPageCategories";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -100,6 +101,14 @@ export function ProductDetailClient({ product, parentCategory }: Props) {
     return (
         <section ref={containerRef} className="bg-background min-h-screen pt-24 pb-20">
             <div className="container-custom max-w-7xl">
+                <Breadcrumbs
+                    items={[
+                        { label: "Catalog", href: "/product" },
+                        { label: product.category, href: `/category/${parentCategory?.slug || ""}` },
+                        { label: product.title, href: "#", active: true }
+                    ]}
+                />
+
                 <Link
                     href="/product"
                     className="back-btn inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors mb-10"

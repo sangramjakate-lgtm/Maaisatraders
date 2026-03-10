@@ -68,8 +68,47 @@ export default function HomePage() {
     }
   };
 
+  // Service Structured Data for Contracting/Work
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Electrical Contracting & Electric Works",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Maaisa Traders India Pvt. LTD."
+    },
+    "areaServed": "Maharashtra",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Electrical Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Industrial Electrical Installation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Maintenance Contracts"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Residential Wiring & Setup"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
@@ -78,7 +117,11 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(searchBoxJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <HomeClient />
-    </>
+    </main>
   );
 }

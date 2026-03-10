@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { ArrowLeft, ArrowDown } from "lucide-react";
-import type { Category } from "@/data/categories";
+import { Category } from "@/data/categories";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 
 interface Props {
     cat: Category;
@@ -47,17 +49,26 @@ export function CategoryHero({ cat, catIndex }: Props) {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="flex items-center justify-between w-full mb-8 lg:mb-16"
+                    className="flex flex-col gap-6 w-full mb-8 lg:mb-16"
                 >
-                    <Link
-                        href="/#products"
-                        className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                        <ArrowLeft size={12} /> Back to Products
-                    </Link>
+                    <Breadcrumbs
+                        items={[
+                            { label: "Products", href: "/product" },
+                            { label: cat.name, href: "#", active: true }
+                        ]}
+                    />
 
-                    <div className="text-[10px] font-black tracking-[0.3em] uppercase opacity-30 select-none">
-                        Category {String(catIndex + 1).padStart(2, "0")}
+                    <div className="flex items-center justify-between w-full">
+                        <Link
+                            href="/#products"
+                            className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            <ArrowLeft size={12} /> Back to Products
+                        </Link>
+
+                        <div className="text-[10px] font-black tracking-[0.3em] uppercase opacity-30 select-none">
+                            Category {String(catIndex + 1).padStart(2, "0")}
+                        </div>
                     </div>
                 </motion.div>
 
@@ -117,11 +128,12 @@ export function CategoryHero({ cat, catIndex }: Props) {
                             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                             className="w-full aspect-square relative"
                         >
-                            <img
+                            <Image
                                 src={cat.categoryImage}
-                                alt={cat.name}
-                                className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                                fetchPriority="high"
+                                alt={`${cat.name} Authorized Distributor Pune`}
+                                fill
+                                className="object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                                priority
                             />
                         </motion.div>
 
