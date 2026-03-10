@@ -121,6 +121,7 @@ export function CategoryHero({ cat, catIndex }: Props) {
                                 src={cat.categoryImage}
                                 alt={cat.name}
                                 className="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                                fetchPriority="high"
                             />
                         </motion.div>
 

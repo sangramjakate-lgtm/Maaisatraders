@@ -171,13 +171,10 @@ export function HomeClient() {
           <div className="hero-cta flex justify-center">
             <a
               href="#catalog"
+              aria-label="Explore our full product catalog"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-foreground text-background rounded-none text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors duration-300 group"
             >
               Explore Catalog
-              {/* <ArrowRight
-                size={16}
-                className="group-hover:translate-x-1 transition-transform"
-              /> */}
             </a>
           </div>
         </div>

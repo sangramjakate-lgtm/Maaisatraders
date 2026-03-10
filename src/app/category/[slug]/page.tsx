@@ -69,11 +69,32 @@ export default async function CategoryPage({ params }: Props) {
         ]
     };
 
+    // CollectionPage Structured Data
+    const collectionJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": `${cat.name} - Authorized Electrical Solutions`,
+        "description": cat.description,
+        "url": `https://maaisatraders.com/category/${slug}`,
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": cat.highlights.map((h, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": h
+            }))
+        }
+    };
+
     return (
         <main className="bg-background min-h-screen">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
             />
 
             {/* ─── ENHANCED HERO (Client Component with Framer Motion) ─── */}
