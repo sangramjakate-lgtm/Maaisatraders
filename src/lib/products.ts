@@ -32,7 +32,7 @@ export const allProducts: Product[] = [
     {
         id: "white-remote-control-ceiling-fan",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577536669/OQ/GL/CN/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-1-500x500.jpeg",
+        image: "/images/products/stealth-white.png",
         title: "White Remote Control Ceiling Fan",
         price: "Contact for Quote",
         description: "Modern smart ceiling fan featuring convenient remote-control operation. Designed with a sleek white finish to seamlessly blend into any contemporary interior decor while providing whisper-quiet air circulation.",
@@ -46,7 +46,7 @@ export const allProducts: Product[] = [
     {
         id: "led-lights-luxury-ceiling-fan",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577525356/SS/ZR/NR/247573501/whatsapp-image-2026-01-21-at-11-25-43-am-1-jpeg-500x500.jpeg",
+        image: "/images/products/renesa-elite.jpg",
         title: "Led Lights Luxury Ceiling Fan",
         price: "Contact for Quote",
         description: "Enhance your living space with this luxury ceiling fan that integrates brilliant LED lighting. Perfect for dining rooms and large master bedrooms, offering both illumination and excellent air delivery.",
@@ -130,7 +130,7 @@ export const allProducts: Product[] = [
     {
         id: "premium-ro-water-purifier",
         category: "Water Purifiers",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577528732/UO/ZT/VY/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg",
+        image: "/images/products/fr-pvc-green.png",
         title: "Premium Ro Water Purifier",
         price: "Contact for Quote",
         description: "Advanced RO + UV + UF purification system that eliminates dissolved impurities, bacteria, and viruses. Features an alkaline cartridge to maintain optimal pH levels.",
@@ -184,9 +184,9 @@ export const allProducts: Product[] = [
         ]
     },
     {
-        id: "havells-bldc-ceiling-fans-a",
+        id: "13",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584514994/RW/TH/GO/247573501/1000055176-500x500.jpg",
+        image: "/images/products/indigo-blue.png",
         title: "Havells Bldc Ceiling Fans (Model A)",
         price: "Contact for Quote",
         description: "Save up to 60% on your electricity bills with the intelligent BLDC motor architecture in this modern Havells fan. Includes inverter stabilization technology.",
@@ -212,9 +212,9 @@ export const allProducts: Product[] = [
         ]
     },
     {
-        id: "havells-underlight-ceiling-fan",
+        id: "15",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577543809/VN/CW/DG/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-500x500.jpeg",
+        image: "/images/products/florence-walnut.png",
         title: "Havells Underlight Ceiling Fan",
         price: "Contact for Quote",
         description: "Dual-purpose underlight ceiling fan. Eliminates the need for multiple ceiling fixtures while providing a magnificent centerpiece and grand air flow.",
@@ -240,10 +240,10 @@ export const allProducts: Product[] = [
         ]
     },
     {
-        id: "royal-luxury-ceiling-fan",
+        id: "16",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584517088/YI/PO/YX/247573501/1000055184-500x500.jpg",
-        title: "Royal Luxury Ceiling fan",
+        image: "/images/products/usha-striker.jpeg",
+        title: "Usha Hunter Luxury Ceiling Fan",
         price: "Contact for Quote",
         description: "Make a statement with the Royal Luxury ceiling fan. Plated housing covers and elegantly carved blade brackets guarantee a sophisticated and regal finish.",
         stats: [

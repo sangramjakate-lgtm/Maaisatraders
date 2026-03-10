@@ -132,14 +132,13 @@ export default function Home() {
   };
 
   const featuredProducts = [
-    { image: "/images/Celing Fan.png", title: "Havells Opus 8 Blade Ceiling Fan" },
-    { image: "/images/Wires.png", title: "Multi Strand Flexible Wire" },
-    { image: "/images/Switches.png", title: "Smart Touch Panel" },
-    { image: "/images/Celling lights.png", title: "Havells Round LED Panel" },
-    { image: "/images/AirConditional.png", title: "2 Ton Inverter Split AC" },
-    { image: "/images/Celing Fan.png", title: "Havells Water Geyser" },
-    { image: "/images/Switches.png", title: "Havells MCB Single Pole" },
-    { image: "/images/Wires.png", title: "Armoured Control Cable" },
+    { image: "/images/products/opus-8.png", title: "Havells Opus 8 Blade Ceiling Fan" },
+    { image: "/images/products/single-core-wire.png", title: "Multi Strand Flexible Wire" },
+    { image: "/images/products/smart-touch.jpg", title: "Smart Touch Panel" },
+    { image: "/images/products/round-panel.jpg", title: "Havells Round LED Panel" },
+    { image: "/images/products/inverter-ac-2.jpg", title: "2 Ton Inverter Split AC" },
+    { image: "/images/products/mcb-single.jpg", title: "Havells MCB Single Pole" },
+    { image: "/images/products/armoured-cable.png", title: "Armoured Control Cable" },
   ];
 
   return (
