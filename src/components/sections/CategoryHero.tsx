@@ -81,7 +81,7 @@ export function CategoryHero({ cat, catIndex }: Props) {
                             </span>
                         </div>
 
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tighter mb-6 text-foreground leading-[1.05]">
+                        <h2 className="font-extrabold tracking-tighter mb-6 text-foreground leading-[1.05] text-[clamp(2.5rem,7vw,4.5rem)]">
                             {cat.name}
                         </h2>
 

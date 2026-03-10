@@ -144,7 +144,7 @@ export default function About() {
                         About Our Company
                     </div>
 
-                    <h1 className="text-foreground tracking-tighter mb-4 md:mb-6 font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1]">
+                    <h1 className="text-foreground tracking-tighter mb-4 md:mb-6 font-black leading-[1] text-[clamp(2.5rem,8vw,4.5rem)]">
                         <span className="block overflow-hidden pb-1 md:pb-2">
                             <span className="clip-text-reveal block">A Legacy Of</span>
                         </span>
@@ -156,7 +156,7 @@ export default function About() {
                         </span>
                     </h1>
 
-                    <p className="hero-subtitle text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed border-l-2 border-primary/30 pl-4 md:pl-6 text-left">
+                    <p className="hero-subtitle text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed border-l-2 border-primary/30 pl-4 md:pl-6 text-left mb-8">
                         Maaisa Traders India Pvt. Ltd. is a premier <strong className="text-foreground">Authorized Distributor</strong> based in Pune,
                         specializing in top-tier <strong className="text-foreground">electricals</strong> and comprehensive <strong className="text-foreground">electric work</strong> with uncompromising efficiency.
                     </p>
