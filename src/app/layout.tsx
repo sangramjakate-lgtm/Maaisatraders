@@ -24,7 +24,13 @@ export const metadata: Metadata = {
     template: "%s | Maaisa Traders India"
   },
   description:
-    "Maaisa Traders India — Authorized distributors of premium electric fans, heaters, and purifiers. Safe, efficient electrical solutions across Maharashtra.",
+    "Authorized distributors of Havells, Legrand & Polycab. Premium electrical solutions and official works in Pune, Maharashtra.",
+  alternates: {
+    canonical: 'https://maaisatraders.com',
+    languages: {
+      'en-IN': 'https://maaisatraders.com',
+    },
+  },
   keywords: [
     "Maaisa Traders India Pvt. LTD.",
     "Authorized Distributor Pune",
@@ -93,9 +99,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     }
   },
-  alternates: {
-    canonical: "/",
-  }
+
 };
 
 export default function RootLayout({
@@ -117,7 +121,8 @@ export default function RootLayout({
       "availableLanguage": "English"
     },
     "sameAs": [
-      // Add social links if available
+      "https://www.facebook.com/people/Maaisa-Traders-India-Pvt-Ltd/61556569127302/",
+      "https://www.instagram.com/maaisatraderspvtltd/"
     ]
   };
 

@@ -7,7 +7,7 @@ const HomeClient = dynamic(() => import("@/components/sections/HomeClient").then
 
 export const metadata: Metadata = {
   title: "Authorized Distributor - Maaisa Traders India Pvt. LTD.",
-  description: "Maaisa Traders India Pvt. Ltd. — Premier authorized distributors of Havells, Legrand, Polycab. Experts in electrical solutions and electric works across Pune and Maharashtra.",
+  description: "Premier authorized distributors of Havells, Polycab & Legrand. Specialist electrical works & solutions in Pune, Maharashtra.",
   alternates: {
     canonical: "/",
   },
