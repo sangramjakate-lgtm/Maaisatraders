@@ -1,8 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allProducts } from "@/lib/products";
-import { categories } from "@/data/categories";
-import { ProductDetailClient } from "@/components/sections/ProductDetailClient";
+import { allProducts, Product } from "@/lib/products";
+import { categories, Category } from "@/data/categories";
+import dynamic from "next/dynamic";
+
+const ProductDetailClient = dynamic(() => import("@/components/sections/ProductDetailClient").then(mod => mod.ProductDetailClient), {
+    ssr: true,
+});
 
 interface Props {
     params: Promise<{ id: string }>;
@@ -42,7 +46,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
     if (!product) notFound();
 
-    const parentCategory = categories.find(c => c.name === product.category) || null;
+    const parentCategory = categories.find((c: Category) => c.name === product.category) || null;
 
     // Breadcrumbs Structured Data
     const breadcrumbJsonLd = {

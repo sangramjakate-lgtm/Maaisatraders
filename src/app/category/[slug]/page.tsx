@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!cat) return {};
 
     return {
-        title: cat.name,
-        description: cat.description,
+        title: `${cat.name} - Authorized Distributor | Maaisa Traders`,
+        description: `Premium range of authorized ${cat.name} from industry leading brands. Efficient and timely delivery across Maharashtra.`,
         openGraph: {
-            title: `${cat.name} | Maaisa Traders India`,
-            description: cat.description,
+            title: `${cat.name} | Authorized Electrical Solutions`,
+            description: `Explore our premium collection of ${cat.name} for industrial and residential use.`,
             images: [{ url: cat.categoryImage }],
         },
         alternates: {

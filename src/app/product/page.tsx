@@ -1,6 +1,10 @@
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { allProducts } from "@/lib/products";
-import { ProductListClient } from "@/components/sections/ProductListClient";
+
+const ProductListClient = dynamic(() => import("@/components/sections/ProductListClient").then(mod => mod.ProductListClient), {
+    ssr: true,
+});
 
 export const metadata: Metadata = {
     title: "Product Catalog",

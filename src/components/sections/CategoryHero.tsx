@@ -86,7 +86,7 @@ export function CategoryHero({ cat, catIndex }: Props) {
                         </h2>
 
                         <p className="text-muted-foreground leading-relaxed text-sm md:text-base mb-10 max-w-lg">
-                            {cat.description}
+                            As an <strong className="text-foreground">Authorized Distributor</strong>, Maaisa Traders provides a premium range of <strong className="text-foreground">{cat.name}</strong> solutions. {cat.description}
                         </p>
 
                         <div className="flex flex-col gap-4 w-full max-w-md">

@@ -75,7 +75,7 @@ export function WhoWeAre() {
                     <h2 className="text-foreground font-light leading-tight tracking-tighter mx-auto max-w-4xl">
                         <span className="font-bold">Maaisa Traders India Pvt. Ltd.</span> <br />
                         <span className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mt-2 inline-block">
-                            is an <span className="font-semibold text-primary">Authorized</span> distributor based in Pune, deeply invested in the business of <span className="font-semibold text-primary">electricals</span> and <span className="font-semibold text-primary">electric work</span>, dedicated to supplying high-quality appliances and electrical solutions efficiently.
+                            is an <strong className="font-semibold text-primary">Authorized Distributor</strong> based in Pune, specializing in premium <strong className="font-semibold text-primary">electricals</strong> and professional <strong className="font-semibold text-primary">electrical experts</strong> services. We are dedicated to supplying high-quality appliances and electrical solutions with maximum efficiency.
                         </span>
                     </h2>
                 </div>

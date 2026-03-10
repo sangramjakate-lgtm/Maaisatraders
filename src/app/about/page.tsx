@@ -1,5 +1,9 @@
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
-import { AboutClient } from "@/components/sections/AboutClient";
+
+const AboutClient = dynamic(() => import("@/components/sections/AboutClient").then(mod => mod.AboutClient), {
+    ssr: true,
+});
 
 export const metadata: Metadata = {
     title: "About Us",

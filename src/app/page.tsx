@@ -1,15 +1,19 @@
-import { HomeClient } from "@/components/sections/HomeClient";
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
 
+const HomeClient = dynamic(() => import("@/components/sections/HomeClient").then(mod => mod.HomeClient), {
+  ssr: true, // We want the skeleton or initial content to be there, but animations can wait
+});
+
 export const metadata: Metadata = {
-  title: "Maaisa Traders India Pvt. LTD. | Authorized Distribution & Electric Works",
-  description: "Premier authorized distributors of Havells, Legrand, Polycab and more. Specialists in electric fans, cables, and comprehensive electric work across Maharashtra.",
+  title: "Authorized Distributor - Maaisa Traders India Pvt. LTD.",
+  description: "Maaisa Traders India Pvt. Ltd. — Premier authorized distributors of Havells, Legrand, Polycab. Experts in electrical solutions and electric works across Pune and Maharashtra.",
   alternates: {
     canonical: "/",
   },
   other: {
     "product:section": "Electricals",
-    "product:tag": "Authorized Distributor, Pune, Maharashtra",
+    "product:tag": "Authorized Distributor, Electricals, Pune, Maharashtra",
   }
 };
 
