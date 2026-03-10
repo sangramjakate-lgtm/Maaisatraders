@@ -1,75 +1,107 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import type { Category } from "@/data/categories";
+import { motion } from "framer-motion";
 
 interface Props {
-    cat: Category;
+  cat: Category;
 }
 
 export function CategoryProductGrid({ cat }: Props) {
-    return (
-        <section className="section-padding">
-            <div className="container-custom">
-                <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                        <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
-                            Our Selection
-                        </p>
-                        <h2 className="text-foreground tracking-tighter">
-                            {cat.name} Products
-                        </h2>
-                    </div>
-                    <Link
-                        href="/product"
-                        className="text-sm font-semibold text-primary hover:text-foreground transition-colors uppercase tracking-wider flex items-center gap-2"
-                    >
-                        View Full Catalog <ArrowRight size={15} />
-                    </Link>
-                </div>
+  if (!cat.products || cat.products.length === 0) return null;
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
-                    {cat.products.map((product, i) => (
-                        <a
-                            key={i}
-                            href={product.link !== "#" ? product.link : undefined}
-                            target={product.link !== "#" ? "_blank" : undefined}
-                            rel="noreferrer"
-                            className="group flex flex-col cursor-pointer"
-                        >
-                            <div
-                                className="relative aspect-square mb-4 bg-white border border-border/50 p-4 overflow-hidden transition-all duration-500"
-                                style={{ transition: "transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease" }}
-                                onMouseEnter={(e) => {
-                                    (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px) scale(1.02)";
-                                    (e.currentTarget as HTMLDivElement).style.boxShadow = "0 20px 40px -10px rgba(0,0,0,0.15)";
-                                }}
-                                onMouseLeave={(e) => {
-                                    (e.currentTarget as HTMLDivElement).style.transform = "translateY(0) scale(1)";
-                                    (e.currentTarget as HTMLDivElement).style.boxShadow = "";
-                                }}
-                            >
-                                <Image
-                                    src={product.image}
-                                    alt={product.title}
-                                    fill
-                                    className="object-contain p-6 group-hover:scale-110 transition-transform duration-700 ease-out"
-                                    unoptimized
-                                />
-                                <div
-                                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    style={{ background: `hsl(${cat.accentHsl} / 0.05)` }}
-                                />
-                            </div>
-                            <h3 className="text-sm font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                                {product.title}
-                            </h3>
-                        </a>
-                    ))}
+  return (
+    <section className="py-24 bg-background relative overflow-hidden" id="products">
+      {/* Subtle background gradient to tie section together */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none opacity-40 block mix-blend-multiply"
+        style={{
+          background: `linear-gradient(to bottom, transparent, hsl(${cat.accentHsl} / 0.03) 50%, transparent)`
+        }}
+      />
+
+      <div className="container-custom max-w-7xl relative z-10 px-6">
+        {/* ─── ENHANCED GRID HEADER ─── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-16 flex flex-col items-start max-w-3xl"
+        >
+          <div className="inline-flex items-center gap-4 mb-4">
+            <span className="w-1.5 h-1.5 rounded-none" style={{ backgroundColor: `hsl(${cat.accentHsl})` }} />
+            <span className="text-[10px] font-black uppercase tracking-[0.25em]" style={{ color: `hsl(${cat.accentHsl})` }}>
+              Authorized Distributor
+            </span>
+          </div>
+
+          <h2 className="text-foreground tracking-tighter text-3xl md:text-5xl font-black mb-6 leading-tight uppercase">
+            Product <span style={{ color: `hsl(${cat.accentHsl})` }}>Range</span>
+          </h2>
+
+          <p className="text-muted-foreground text-sm md:text-base leading-[1.8] max-w-xl">
+            Explore our curated selection of premium {cat.name.toLowerCase()} — engineered for maximum efficiency, safety, and modern aesthetics.
+          </p>
+        </motion.div>
+
+        {/* ─── ANIMATED PRODUCT GRID ─── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {cat.products.map((product, i) => (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              key={i}
+              className="group relative flex flex-col bg-card border border-border/40 hover:border-primary/40 rounded-none overflow-hidden transition-colors duration-500"
+            >
+              {/* Top Accent Line */}
+              <span
+                className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500 ease-out z-20"
+                style={{ backgroundColor: `hsl(${cat.accentHsl})` }}
+              />
+
+              {/* ── IMAGE SECTION ── */}
+              <div className="relative w-full aspect-square p-8 flex items-center justify-center overflow-hidden border-b border-border/20 z-10 bg-white">
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full h-full relative"
+                >
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-contain filter group-hover:drop-shadow-lg transition-all duration-500"
+                    unoptimized
+                  />
+                </motion.div>
+
+                {/* Overlay glow on hover */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: `hsl(${cat.accentHsl})` }}
+                />
+              </div>
+
+              {/* ── TEXT SECTION ── */}
+              <div className="p-6 flex flex-col relative z-20 bg-background/50">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
+                    Model {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: `hsl(${cat.accentHsl})` }} />
                 </div>
-            </div>
-        </section>
-    );
+                <h3 className="text-sm md:text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-400">
+                  {product.title}
+                </h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
