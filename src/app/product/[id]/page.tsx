@@ -220,7 +220,7 @@ export default function ProductDetail() {
             ═══════════════════════════════════════════════ */}
             {parentCategory && (
                 <div className="mt-32">
-                    <CategoryProductGrid category={parentCategory} />
+                    <CategoryProductGrid cat={parentCategory} />
                 </div>
             )}
 

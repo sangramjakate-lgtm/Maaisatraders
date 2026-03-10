@@ -59,7 +59,7 @@ export const categories: Category[] = [
     },
     {
         slug: "wires-cables",
-        name: "Wire & Cables",
+        name: "Cables & Wires",
         tagline: "Safe connections, every time",
         description:
             "ISI certified, flame-retardant wires and industrial cables built to meet the strictest safety standards across residential and commercial projects.",
@@ -90,7 +90,7 @@ export const categories: Category[] = [
     },
     {
         slug: "switchgear",
-        name: "Switchgear & Switches",
+        name: "Switches & Switchgear",
         tagline: "Control at your fingertips",
         description:
             "MCBs, distribution boards, modular switches and smart control panels that protect your installations while adding an elegant finish.",
@@ -125,7 +125,7 @@ export const categories: Category[] = [
     },
     {
         slug: "lights",
-        name: "Lights",
+        name: "Lighting",
         tagline: "Illuminate every space",
         description:
             "Energy-saving LED panels, battens, downlighters and decorative fixtures that cut electricity bills while delivering brilliant, consistent light.",

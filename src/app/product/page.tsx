@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-const categories = ["All", "Fans", "Water Heaters", "Water Purifiers", "Accessories"];
+const categories = ["All", "Fans", "Cables & Wires", "Switches & Switchgear", "Air Conditioners", "Lighting"];
 
 export default function Product() {
     const containerRef = useRef<HTMLElement>(null);

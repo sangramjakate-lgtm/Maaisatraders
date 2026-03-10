@@ -87,7 +87,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "havells-water-geyser",
-        category: "Water Heaters",
+        category: "Cables & Wires",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577527120/IE/US/NB/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-3-jpeg-500x500.jpeg",
         title: "Havells Water Geyser",
         price: "Contact for Quote",
@@ -101,7 +101,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "havells-electric-storage-water-heater",
-        category: "Water Heaters",
+        category: "Cables & Wires",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577533832/FQ/QV/SL/247573501/electric-storage-water-heater-500x500.jpeg",
         title: "Havells Electric Storage Water Heater",
         price: "Contact for Quote",
@@ -115,7 +115,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "standard-water-geyser",
-        category: "Water Heaters",
+        category: "Cables & Wires",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577451828/PW/XG/LT/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-3-jpeg-500x500.jpeg",
         title: "Standard Water Geyser",
         price: "Contact for Quote",
@@ -129,7 +129,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "premium-ro-water-purifier",
-        category: "Water Purifiers",
+        category: "Switches & Switchgear",
         image: "/images/products/fr-pvc-green.png",
         title: "Premium Ro Water Purifier",
         price: "Contact for Quote",
@@ -143,7 +143,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "havells-water-purifier",
-        category: "Water Purifiers",
+        category: "Switches & Switchgear",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577529649/HT/OD/FA/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg",
         title: "Havells Water Purifier",
         price: "Contact for Quote",
@@ -157,7 +157,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "uv-water-purifier",
-        category: "Water Purifiers",
+        category: "Switches & Switchgear",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577451934/XF/KR/FI/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg",
         title: "UV Water Purifier",
         price: "Contact for Quote",
@@ -171,7 +171,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "ceiling-fan-blade-set",
-        category: "Accessories",
+        category: "Air Conditioners",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577538710/TU/SN/HS/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-500x500.jpeg",
         title: "Ceiling Fan Blade Set",
         price: "Contact for Replacement Quote",
@@ -311,7 +311,7 @@ export const allProducts: Product[] = [
     },
     {
         id: "led-lights-luxury-ceiling-fan-variant",
-        category: "Fans",
+        category: "Lighting",
         image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584517263/JW/ZX/MJ/247573501/1000055180-500x500.jpg",
         title: "Led Lights Luxury Ceiling Fan (Variant)",
         price: "Contact for Quote",
