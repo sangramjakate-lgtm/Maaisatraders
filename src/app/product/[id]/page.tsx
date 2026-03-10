@@ -18,6 +18,10 @@ import {
 } from "lucide-react";
 
 import { allProducts, Product } from "@/lib/products";
+import { categories } from "@/data/categories";
+
+import { CategoryProductGrid } from "@/components/sections/CategoryProductGrid";
+import { ProductPageCategories } from "@/components/sections/ProductPageCategories";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -28,6 +32,11 @@ export default function ProductDetail() {
     const router = useRouter();
     const containerRef = useRef<HTMLElement>(null);
     const [product, setProduct] = useState<Product | null>(null);
+
+    // Derive the parent Category object to pass to the grid below
+    const parentCategory = product
+        ? categories.find(c => c.name === product.category)
+        : null;
 
     // Map some random icons to the stats dynamically for aesthetic purposes
     const getStatIcon = (index: number) => {
@@ -205,6 +214,21 @@ export default function ProductDetail() {
                 </div>
 
             </div>
+
+            {/* ═══════════════════════════════════════════════
+                 BOTTOM: RELATED PRODUCTS ("OUR RANGE")
+            ═══════════════════════════════════════════════ */}
+            {parentCategory && (
+                <div className="mt-32">
+                    <CategoryProductGrid category={parentCategory} />
+                </div>
+            )}
+
+            {/* ═══════════════════════════════════════════════
+                 BOTTOM: MORE CATEGORIES
+            ═══════════════════════════════════════════════ */}
+            <ProductPageCategories />
+
         </section>
     );
 }

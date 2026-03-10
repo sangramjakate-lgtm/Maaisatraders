@@ -10,6 +10,7 @@ import { ArrowRight, Filter } from "lucide-react";
 
 import { allProducts } from "@/lib/products";
 import { BrandGrid } from "@/components/sections/BrandGrid";
+import { ProductListCategories } from "@/components/sections/ProductListCategories";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -25,37 +26,7 @@ export default function Product() {
         ? allProducts
         : allProducts.filter(p => p.category === activeCategory);
 
-    // 1. Hero Entrance (Runs only once on mount)
-    useGSAP(() => {
-        const tl = gsap.timeline();
-        tl.from(".page-badge", {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "back.out(1.5)"
-        })
-            .from(".page-title", {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "elastic.out(1, 0.8)"
-            }, "-=0.6")
-            .from(".page-desc", {
-                y: 20,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out"
-            }, "-=0.8")
-            .from(".filter-btn", {
-                y: 20,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.05,
-                ease: "back.out(2)"
-            }, "-=0.6");
-    }, { scope: containerRef }); // Empty dependencies = run once
-
-    // 2. Grid Animation (Runs every time activeCategory changes)
+    // Grid Animation (Runs every time activeCategory changes)
     useGSAP(() => {
         gsap.fromTo(".product-card",
             { y: 60, opacity: 0, scale: 0.95 },
@@ -78,47 +49,38 @@ export default function Product() {
     return (
         <section ref={containerRef} className="bg-background min-h-screen">
 
-            <BrandGrid />
-
             {/* ═══════════════════════════════════════════════
-               HERO & FILTER HEADER
+                 BRANDS REUSABLE SECTION (Moved from top to here for better visual flow)
             ═══════════════════════════════════════════════ */}
-            <div className="pt-16 pb-12 bg-muted/20 border-b border-border/50">
-                <div className="container-custom max-w-5xl text-center">
-                    <div className="page-badge inline-flex items-center gap-2 px-3 py-1 rounded-none border-b border-primary/30 text-primary text-[10px] uppercase tracking-[0.2em] font-bold mb-8">
-                        Product Catalog
-                    </div>
-
-                    <h1 className="page-title text-foreground tracking-tighter mb-6">
-                        Explore Our Range.
-                    </h1>
-
-                    <p className="page-desc text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-                        A curated selection of premium distributed electrical appliances, sourced strictly from industry-leading manufacturers.
-                    </p>
-
-                    {/* Filter Bar */}
-                    <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-                        {categories.map((cat, i) => (
-                            <button
-                                key={i}
-                                onClick={() => setActiveCategory(cat)}
-                                className={`filter-btn px-8 py-3 text-sm font-bold uppercase tracking-widest rounded-none transition-colors duration-300 shadow-sm ${activeCategory === cat
-                                    ? "bg-primary text-primary-foreground border-2 border-primary"
-                                    : "bg-white text-foreground border-2 border-border hover:border-primary hover:text-primary"
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-                </div>
+            <div className="border-b border-border/50">
+                <BrandGrid />
             </div>
 
             {/* ═══════════════════════════════════════════════
-               MASONRY / GRID GALLERY
+               NEW: MASSIVE CATEGORY SHOWCASE
+            ═══════════════════════════════════════════════ */}
+            <ProductListCategories />
+
+            {/* ═══════════════════════════════════════════════
+               MASONRY / GRID GALLERY & FILTERS
             ═══════════════════════════════════════════════ */}
             <div className="container-custom py-16">
+
+                {/* Filter Bar */}
+                <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+                    {categories.map((cat, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setActiveCategory(cat)}
+                            className={`filter-btn px-6 py-2.5 text-[11px] font-bold uppercase tracking-widest rounded-none transition-colors duration-300 shadow-sm ${activeCategory === cat
+                                ? "bg-primary text-primary-foreground border-2 border-primary"
+                                : "bg-white text-foreground border-2 border-border hover:border-primary hover:text-primary"
+                                }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
 
                 <div className="flex items-center justify-between mb-10 pb-4 border-b border-border/40">
                     <p className="text-sm font-bold tracking-wider text-muted-foreground uppercase">
