@@ -43,8 +43,38 @@ export default async function CategoryPage({ params }: Props) {
     const catIndex = categories.findIndex((c) => c.slug === slug);
     const next = categories[(catIndex + 1) % categories.length];
 
+    // Breadcrumbs Structured Data
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://maaisatraders.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Categories",
+                "item": "https://maaisatraders.com/product"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": cat.name,
+                "item": `https://maaisatraders.com/category/${slug}`
+            }
+        ]
+    };
+
     return (
         <main className="bg-background min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
 
             {/* ─── ENHANCED HERO (Client Component with Framer Motion) ─── */}
             <CategoryHero cat={cat} catIndex={catIndex} />

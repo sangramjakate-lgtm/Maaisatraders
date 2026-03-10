@@ -28,6 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
         alternates: {
             canonical: `/product/${id}`,
+        },
+        other: {
+            "product:section": product.category,
+            "product:tag": `${product.category}, Authorized Distributor, Pune`,
         }
     };
 }
@@ -40,7 +44,33 @@ export default async function ProductDetailPage({ params }: Props) {
 
     const parentCategory = categories.find(c => c.name === product.category) || null;
 
-    // Structured Data (JSON-LD)
+    // Breadcrumbs Structured Data
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://maaisatraders.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": product.category,
+                "item": parentCategory ? `https://maaisatraders.com/category/${parentCategory.slug}` : "https://maaisatraders.com/product"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": product.title,
+                "item": `https://maaisatraders.com/product/${id}`
+            }
+        ]
+    };
+
+    // Product Structured Data
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -62,6 +92,10 @@ export default async function ProductDetailPage({ params }: Props) {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
