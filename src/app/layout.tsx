@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Maaisa Traders India"
   },
   description:
-    "Maaisa Traders India Pvt. Ltd. provides the best range of electric fans, water heaters, geysers, water purifiers, and elite electric work with effective and timely delivery in Maharashtra.",
+    "Maaisa Traders India — Authorized distributors of premium electric fans, heaters, and purifiers. Safe, efficient electrical solutions across Maharashtra.",
   keywords: [
     "Maaisa Traders India Pvt. LTD.",
     "Authorized Distributor Pune",

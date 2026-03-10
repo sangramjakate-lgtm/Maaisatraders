@@ -39,7 +39,7 @@ export function Footer() {
                                 href="/product"
                                 className="text-sm text-white/60 hover:text-white transition-colors"
                             >
-                                Products & Services
+                                Product Catalog
                             </Link>
                         </li>
                         <li>
@@ -47,7 +47,7 @@ export function Footer() {
                                 href="/about"
                                 className="text-sm text-white/60 hover:text-white transition-colors"
                             >
-                                About Us
+                                Company Profile
                             </Link>
                         </li>
                     </ul>

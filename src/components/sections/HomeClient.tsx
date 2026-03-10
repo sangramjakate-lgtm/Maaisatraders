@@ -20,9 +20,17 @@ import {
   Phone
 } from "lucide-react";
 
-import { WhoWeAre } from "@/components/sections/WhoWeAre";
-import { BrandSlider } from "@/components/sections/BrandSlider";
-import { ProductCategories } from "@/components/sections/ProductCategories";
+import dynamic from "next/dynamic";
+
+const WhoWeAre = dynamic(() => import("@/components/sections/WhoWeAre").then(mod => mod.WhoWeAre), {
+  ssr: true,
+});
+const BrandSlider = dynamic(() => import("@/components/sections/BrandSlider").then(mod => mod.BrandSlider), {
+  ssr: true,
+});
+const ProductCategories = dynamic(() => import("@/components/sections/ProductCategories").then(mod => mod.ProductCategories), {
+  ssr: true,
+});
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
