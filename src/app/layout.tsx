@@ -80,6 +80,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     }
+  },
+  alternates: {
+    canonical: "/",
   }
 };
 
@@ -88,8 +91,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Maaisa Traders India Pvt. LTD.",
+    "url": "https://maaisatraders.com",
+    "logo": "https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9890200222",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      // Add social links if available
+    ]
+  };
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body
         className={`${montserrat.variable} ${lato.variable} antialiased min-h-screen flex flex-col font-body`}
         suppressHydrationWarning

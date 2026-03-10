@@ -5,6 +5,28 @@ import { categories } from "@/data/categories";
 import { CategoryHero } from "@/components/sections/CategoryHero";
 import { CategoryProductGrid } from "@/components/sections/CategoryProductGrid";
 
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const cat = categories.find((c) => c.slug === slug);
+
+    if (!cat) return {};
+
+    return {
+        title: cat.name,
+        description: cat.description,
+        openGraph: {
+            title: `${cat.name} | Maaisa Traders India`,
+            description: cat.description,
+            images: [{ url: cat.categoryImage }],
+        },
+        alternates: {
+            canonical: `/category/${slug}`,
+        }
+    };
+}
+
 export function generateStaticParams() {
     return categories.map((c) => ({ slug: c.slug }));
 }
