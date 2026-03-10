@@ -16,6 +16,11 @@ const lato = Lato({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
 });
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maaisatraders.com"), // Update with actual domain

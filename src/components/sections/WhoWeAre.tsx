@@ -11,6 +11,9 @@ export function WhoWeAre() {
     useEffect(() => {
         if (!cursorRef.current || !containerRef.current) return;
 
+        // Optimization for INP: Do not initialize cursor tracking on touch devices
+        if (window.matchMedia("(pointer: coarse)").matches) return;
+
         // Create highly performant GSAP quick setters
         const xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.4, ease: "power3" });
         const yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.4, ease: "power3" });

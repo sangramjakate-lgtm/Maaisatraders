@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   description: "Premier authorized distributors of Havells, Polycab & Legrand. Specialist electrical works & solutions in Pune, Maharashtra.",
   alternates: {
     canonical: "/",
+    languages: {
+      "en-IN": "https://maaisatraders.com",
+      "x-default": "https://maaisatraders.com",
+    },
   },
   other: {
     "product:section": "Electricals",
