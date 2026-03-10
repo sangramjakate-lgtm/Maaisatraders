@@ -98,10 +98,6 @@ export default async function ProductDetailPage({ params }: Props) {
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-            />
-            <script
-                type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <ProductDetailClient product={product} parentCategory={parentCategory} />

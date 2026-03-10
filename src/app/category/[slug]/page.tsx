@@ -90,10 +90,6 @@ export default async function CategoryPage({ params }: Props) {
         <main className="bg-background min-h-screen">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-            />
-            <script
-                type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
             />
 

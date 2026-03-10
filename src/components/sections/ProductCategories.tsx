@@ -228,7 +228,7 @@ export function ProductCategories() {
                                 >
                                     <Image
                                         src={cat.categoryImage}
-                                        alt={`${cat.name} Authorized Distribution Pune`}
+                                        alt={`${cat.name} — Authorized Distributor & Service Provider Pune`}
                                         fill
                                         className="object-contain"
                                         unoptimized

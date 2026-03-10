@@ -141,8 +141,47 @@ export function HomeClient() {
     { image: "/images/products/armoured-cable.png", title: "Armoured Control Cable" },
   ];
 
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Maaisa Traders India Pvt. Ltd.",
+    "image": "https://res.cloudinary.com/de6u5kbiw/image/upload/v1772447140/maaisa/Maaisa_wxdvqt.png",
+    "@id": "https://maaisatraders.com",
+    "url": "https://maaisatraders.com",
+    "telephone": "+91-9890200222",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3rd Floor, Office No 301 & 302, 41 Elite, Kalewadi Main Road, Tathawade",
+      "addressLocality": "Pune",
+      "postalCode": "411033",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.6186,
+      "longitude": 73.7516
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  };
+
   return (
     <div ref={pageRef} className="bg-background selection:bg-primary/20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
 
       {/* ═══════════════════════════════════════════════
           MINIMALIST HERO SECTION

@@ -12,8 +12,31 @@ interface Props {
 }
 
 export function Breadcrumbs({ items }: Props) {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://maaisatraders.com"
+            },
+            ...items.map((item, idx) => ({
+                "@type": "ListItem",
+                "position": idx + 2,
+                "name": item.label,
+                "item": item.href.startsWith("http") ? item.href : `https://maaisatraders.com${item.href}`
+            }))
+        ]
+    };
+
     return (
         <nav aria-label="Breadcrumb" className="flex mb-6">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <ol className="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                 <li className="flex items-center">
                     <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">

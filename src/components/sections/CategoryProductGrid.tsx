@@ -78,7 +78,7 @@ export function CategoryProductGrid({ cat }: Props) {
                   >
                     <Image
                       src={product.image}
-                      alt={product.title}
+                      alt={`${product.title} — Authorized Distribution & Electrical Supply Pune`}
                       fill
                       className="object-contain filter group-hover:drop-shadow-lg transition-all duration-500"
                       unoptimized
