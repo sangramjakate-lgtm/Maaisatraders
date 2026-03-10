@@ -49,25 +49,31 @@ export function ProductListCategories() {
 
                 {/* ── ACCORDION GALLERY ── */}
                 <div
-                    className="flex flex-col md:flex-row w-full h-[800px] md:h-[500px] lg:h-[600px] gap-2 md:gap-4 select-none"
+                    className="flex flex-col md:flex-row w-full h-[600px] md:h-[500px] lg:h-[600px] gap-2 md:gap-4 select-none mb-10"
                     onMouseLeave={() => setActiveIndex(0)} // Reset to first on mouse leave
                 >
                     {categories.map((cat, i) => {
                         const isActive = activeIndex === i;
 
                         return (
-                            <Link
+                            <div
                                 key={cat.slug}
-                                href={`/category/${cat.slug}`}
                                 onMouseEnter={() => setActiveIndex(i)}
-                                // This Flex transition is the magic. 
-                                // Inactive columns are 'flex-1'. Active is a massive 'flex-[3] or flex-[4]'
+                                onClick={() => setActiveIndex(i)}
                                 className={`
-                                    relative flex-1 rounded-sm overflow-hidden border border-border/50 bg-white
+                                    relative flex-1 rounded-sm overflow-hidden border border-border/50 bg-white cursor-pointer
                                     transition-[flex,background-color] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]
-                                    ${isActive ? 'md:flex-[4] lg:flex-[5] flex-[3] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border-transparent' : 'md:flex-1 hidden md:flex opacity-70 hover:opacity-100'}
+                                    ${isActive ? 'md:flex-[4] lg:flex-[5] flex-[3] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border-transparent' : 'md:flex-1 h-[80px] md:h-full opacity-70 hover:opacity-100'}
                                 `}
                             >
+                                {/* Background Image Image (Always visible icon on mobile inactive) */}
+                                {!isActive && (
+                                    <div className="md:hidden absolute inset-0 flex items-center justify-between p-6">
+                                        <span className="text-xs font-bold text-muted-foreground uppercase">{cat.name}</span>
+                                        <img src={cat.categoryImage} className="w-12 h-12 object-contain opacity-40" />
+                                    </div>
+                                )}
+
                                 {/* Active Ambient Glow */}
                                 <div
                                     className={`absolute inset-0 pointer-events-none transition-opacity duration-1000 ${isActive ? 'opacity-10' : 'opacity-0'}`}
@@ -84,7 +90,6 @@ export function ProductListCategories() {
 
                                 {/* ── CONTENT CONTAINER ── */}
                                 <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row">
-
                                     {/* VERTICAL HEADER (Always visible on desktop, hidden on mobile) */}
                                     <div className={`
                                         hidden md:flex w-full md:w-[80px] h-[80px] md:h-full border-b md:border-b-0 md:border-r border-border/30 
@@ -94,11 +99,9 @@ export function ProductListCategories() {
                                         <span className="text-[10px] font-black text-muted-foreground tracking-[0.2em] transform md:-rotate-90 origin-center whitespace-nowrap">
                                             0{i + 1}
                                         </span>
-
                                         <h3 className="text-sm font-bold tracking-widest uppercase text-foreground transform md:-rotate-90 origin-center whitespace-nowrap hidden md:block">
                                             {cat.name}
                                         </h3>
-
                                         <div
                                             className={`w-2 h-2 rounded-full transition-all duration-500 ${isActive ? 'scale-150' : 'scale-100 opacity-20'}`}
                                             style={{ backgroundColor: `hsl(${cat.accentHsl})` }}
@@ -111,8 +114,6 @@ export function ProductListCategories() {
                                         transition-opacity duration-700 delay-100
                                         ${isActive ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
                                     `}>
-
-                                        {/* Massive Background Image Image */}
                                         <div className={`
                                             absolute inset-0 z-0 flex items-center justify-center p-12 md:p-24
                                             transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)]
@@ -127,9 +128,8 @@ export function ProductListCategories() {
                                             </div>
                                         </div>
 
-                                        {/* Content Block layered on top bottom-left */}
                                         <div className={`
-                                            relative z-10 w-full max-w-sm mt-auto bg-white/90 backdrop-blur-md p-6 border border-border/50 shadow-xl
+                                            relative z-10 w-full max-w-sm mt-auto bg-white/95 backdrop-blur-md p-6 border border-border/50 shadow-xl
                                             transition-all duration-700 delay-200
                                             ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                                         `}>
@@ -137,22 +137,34 @@ export function ProductListCategories() {
                                                 <h3 className="text-2xl font-black tracking-tight leading-none" style={{ color: `hsl(${cat.accentHsl})` }}>
                                                     {cat.name}
                                                 </h3>
-                                                <div
+                                                <Link
+                                                    href={`/category/${cat.slug}`}
                                                     className="w-10 h-10 border border-border flex items-center justify-center rounded-none bg-background hover:bg-zinc-100 transition-colors"
                                                 >
                                                     <ArrowUpRight size={16} />
-                                                </div>
+                                                </Link>
                                             </div>
                                             <p className="text-sm text-foreground/70 font-medium leading-relaxed">
                                                 {cat.description || cat.tagline}
                                             </p>
                                         </div>
-
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         );
                     })}
+                </div>
+
+                {/* Mobile Indicators (Dots) */}
+                <div className="flex md:hidden justify-center gap-2">
+                    {categories.map((_, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setActiveIndex(i)}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${activeIndex === i ? 'w-8 bg-primary' : 'bg-muted-foreground/30'}`}
+                            aria-label={`Go to ${categories[i].name}`}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

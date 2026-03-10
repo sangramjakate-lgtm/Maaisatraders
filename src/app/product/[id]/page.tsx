@@ -173,7 +173,7 @@ export default function ProductDetail() {
                             {product.category}
                         </div>
 
-                        <h1 className="product-title text-foreground tracking-tighter leading-none mb-6">
+                        <h1 className="product-title text-foreground tracking-tighter leading-[1.1] mb-6 text-[clamp(2rem,6vw,4.5rem)]">
                             {product.title}
                         </h1>
 
@@ -191,7 +191,7 @@ export default function ProductDetail() {
                         </div>
 
                         {/* Dummy Stats Grid */}
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-8 mb-14">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 mb-14">
                             {product.stats.map((stat, i) => (
                                 <div key={i} className="stat-card flex gap-4">
                                     <div className="w-10 h-10 rounded-none bg-primary/[0.05] border border-primary/10 flex items-center justify-center shrink-0">
