@@ -131,22 +131,15 @@ export default function Home() {
     window.location.href = `mailto:info@maaisatraders.com?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
   };
 
-  const distributedProducts = [
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577534893/WX/TD/FW/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-2-500x500.jpeg", title: "Havells Opus 8 Blade Ceiling Fan", link: "https://www.indiamart.com/proddetail/havells-opus-8-blade-ceiling-fan-2858611809533.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577536669/OQ/GL/CN/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-1-500x500.jpeg", title: "White Remote Control Ceiling Fan", link: "https://www.indiamart.com/proddetail/white-remote-control-ceiling-fan-2858611856491.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577525356/SS/ZR/NR/247573501/whatsapp-image-2026-01-21-at-11-25-43-am-1-jpeg-500x500.jpeg", title: "Led Lights Luxury Ceiling Fan", link: "https://www.indiamart.com/proddetail/led-lights-luxury-ceiling-fan-2858611401188.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577539635/ZY/NV/WS/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-1-500x500.jpeg", title: "Led Light Ceiling Fan", link: "https://www.indiamart.com/proddetail/led-light-ceiling-fan-2858611921773.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577541187/EN/LT/TU/247573501/whatsapp-image-2026-01-21-at-11-25-43-am-2-500x500.jpeg", title: "Usha Hunter Luxury Ceiling Fan", link: "https://www.indiamart.com/proddetail/usha-hunter-luxury-ceiling-fan-2858611951055.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577527120/IE/US/NB/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-3-jpeg-500x500.jpeg", title: "Havells Water Geyser", link: "https://www.indiamart.com/proddetail/havells-water-geyser-2858611493812.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577533832/FQ/QV/SL/247573501/electric-storage-water-heater-500x500.jpeg", title: "Havells Electric Storage Water Heater", link: "https://www.indiamart.com/proddetail/havells-electric-storage-water-heater-2858611721873.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577528732/UO/ZT/VY/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg", title: "Premium Ro Water Purifier", link: "https://www.indiamart.com/proddetail/premium-ro-water-purifier-2858611546255.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577529649/HT/OD/FA/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg", title: "Havells Water Purifier", link: "https://www.indiamart.com/proddetail/havells-water-purifier-2858611586948.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577538710/TU/SN/HS/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-500x500.jpeg", title: "Ceiling Fan Blade Set", link: "https://www.indiamart.com/proddetail/ceiling-fan-blade-set-2858611894597.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584514994/RW/TH/GO/247573501/1000055176-500x500.jpg", title: "Havells Bldc Ceiling Fans", link: "#" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577543809/VN/CW/DG/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-500x500.jpeg", title: "Havells Underlight Ceiling Fan", link: "https://www.indiamart.com/proddetail/havells-underlight-ceiling-fan-2858611994662.html" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584517088/YI/PO/YX/247573501/1000055184-500x500.jpg", title: "Royal Luxury Ceiling fan", link: "#" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584514939/DL/HC/LS/247573501/1000055174-500x500.jpg", title: "Havells Bldc Fan", link: "#" },
-    { image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584516059/KZ/HH/IZ/247573501/1000055179-500x500.jpg", title: "Havells Opus Ceiling Fan", link: "#" },
+  const featuredProducts = [
+    { image: "/images/Celing Fan.png", title: "Havells Opus 8 Blade Ceiling Fan" },
+    { image: "/images/Wires.png", title: "Multi Strand Flexible Wire" },
+    { image: "/images/Switches.png", title: "Smart Touch Panel" },
+    { image: "/images/Celling lights.png", title: "Havells Round LED Panel" },
+    { image: "/images/AirConditional.png", title: "2 Ton Inverter Split AC" },
+    { image: "/images/Celing Fan.png", title: "Havells Water Geyser" },
+    { image: "/images/Switches.png", title: "Havells MCB Single Pole" },
+    { image: "/images/Wires.png", title: "Armoured Control Cable" },
   ];
 
   return (
@@ -220,12 +213,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-12 stagger-group pb-10">
-            {distributedProducts.map((product, i) => (
-              <a
+            {featuredProducts.map((product, i) => (
+              <div
                 key={i}
-                href={product.link !== "#" ? product.link : undefined}
-                target={product.link !== "#" ? "_blank" : undefined}
-                rel="noreferrer"
                 className="stagger-card group flex flex-col cursor-pointer"
               >
                 <div className="relative aspect-square mb-4 bg-white border border-border/50 p-4 transition-all duration-500 overflow-hidden">
@@ -239,10 +229,10 @@ export default function Home() {
                   {/* Subtle overlay on hover */}
                   <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 className="text-sm font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
+                <h3 className="font-bold text-sm text-foreground line-clamp-2 md:text-base group-hover:text-primary transition-colors">
                   {product.title}
                 </h3>
-              </a>
+              </div>
             ))}
           </div>
         </div>

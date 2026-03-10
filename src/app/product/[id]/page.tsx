@@ -200,23 +200,6 @@ export default function ProductDetail() {
                             ))}
                         </div>
 
-                        {/* External Link Action */}
-                        <div className="buy-btn border-t border-border pt-10">
-                            <a
-                                href={product.link !== "#" ? product.link : undefined}
-                                target={product.link !== "#" ? "_blank" : undefined}
-                                rel="noreferrer"
-                                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-foreground text-background rounded-none text-xs uppercase tracking-widest font-bold hover:bg-primary transition-colors duration-300 w-full sm:w-auto group"
-                            >
-                                View on IndiaMART
-                                <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </a>
-                            {product.link === "#" && (
-                                <p className="text-xs text-muted-foreground mt-4 font-medium italic">
-                                    * This product is currently available only via direct distributor inquiry.
-                                </p>
-                            )}
-                        </div>
 
                     </div>
                 </div>

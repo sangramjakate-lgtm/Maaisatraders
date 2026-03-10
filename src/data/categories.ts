@@ -33,33 +33,27 @@ export const categories: Category[] = [
         products: [
             {
                 title: "Havells Opus 8 Blade Ceiling Fan",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2026/1/577534893/WX/TD/FW/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-2-500x500.jpeg",
+                image: "/images/stock/hero_fan_1773133471811.png",
             },
             {
                 title: "White Remote Control Ceiling Fan",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2026/1/577536669/OQ/GL/CN/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-1-500x500.jpeg",
+                image: "/images/stock/hero_fan_1773133471811.png",
             },
             {
                 title: "Led Lights Luxury Ceiling Fan",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2026/1/577525356/SS/ZR/NR/247573501/whatsapp-image-2026-01-21-at-11-25-43-am-1-jpeg-500x500.jpeg",
+                image: "/images/stock/hero_fan_1773133471811.png",
             },
             {
                 title: "Havells BLDC Ceiling Fan",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2026/2/584514994/RW/TH/GO/247573501/1000055176-500x500.jpg",
+                image: "/images/stock/hero_fan_1773133471811.png",
             },
             {
                 title: "Havells Underlight Ceiling Fan",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2026/1/577543809/VN/CW/DG/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-500x500.jpeg",
+                image: "/images/stock/hero_fan_1773133471811.png",
             },
             {
                 title: "Usha Hunter Luxury Ceiling Fan",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2026/1/577541187/EN/LT/TU/247573501/whatsapp-image-2026-01-21-at-11-25-43-am-2-500x500.jpeg",
+                image: "/images/stock/hero_fan_1773133471811.png",
             },
         ],
     },
@@ -78,23 +72,19 @@ export const categories: Category[] = [
         products: [
             {
                 title: "Havells FR PVC Insulated Cable",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/RH/IB/CM/247573501/havells-fr-pvc-insulated-cable-500x500.jpeg",
+                image: "/images/stock/hero_wires_1773133489083.png",
             },
             {
                 title: "Havells Life Shield HFFR Cable",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/SD/BA/OM/247573501/havells-life-shield-hffr-cable-500x500.jpeg",
+                image: "/images/stock/hero_wires_1773133489083.png",
             },
             {
                 title: "Multi Strand Flexible Wire",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/flexible-wire-500x500.jpeg",
+                image: "/images/stock/hero_wires_1773133489083.png",
             },
             {
                 title: "Armoured Control Cable",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/armoured-control-cable-500x500.jpeg",
+                image: "/images/stock/hero_wires_1773133489083.png",
             },
         ],
     },
@@ -113,28 +103,23 @@ export const categories: Category[] = [
         products: [
             {
                 title: "Havells MCB Single Pole",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/mcb-500x500.jpeg",
+                image: "/images/stock/hero_switch_1773133517455.png",
             },
             {
                 title: "Havells Distribution Board",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/distribution-board-500x500.jpeg",
+                image: "/images/stock/hero_switch_1773133517455.png",
             },
             {
                 title: "Modular Switch Plate 6A",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/modular-switch-500x500.jpeg",
+                image: "/images/stock/hero_switch_1773133517455.png",
             },
             {
                 title: "Smart Touch Panel",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/smart-switch-500x500.jpeg",
+                image: "/images/stock/hero_switch_1773133517455.png",
             },
             {
                 title: "RCCB Double Pole",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/rccb-500x500.jpeg",
+                image: "/images/stock/hero_switch_1773133517455.png",
             },
         ],
     },
@@ -153,28 +138,23 @@ export const categories: Category[] = [
         products: [
             {
                 title: "Havells LED Batten 20W",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/led-batten-500x500.jpeg",
+                image: "/images/stock/hero_light_1773133532927.png",
             },
             {
                 title: "Havells Round LED Panel",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/led-panel-500x500.jpeg",
+                image: "/images/stock/hero_light_1773133532927.png",
             },
             {
                 title: "Decorative Pendant Light",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/pendant-500x500.jpeg",
+                image: "/images/stock/hero_light_1773133532927.png",
             },
             {
                 title: "LED Strip Light 5M",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/led-strip-500x500.jpeg",
+                image: "/images/stock/hero_light_1773133532927.png",
             },
             {
                 title: "Surface Mount Spot Light",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/spot-light-500x500.jpeg",
+                image: "/images/stock/hero_light_1773133532927.png",
             },
         ],
     },
@@ -193,23 +173,19 @@ export const categories: Category[] = [
         products: [
             {
                 title: "Havells 1.5 Ton Split AC",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/split-ac-500x500.jpeg",
+                image: "/images/stock/hero_ac_1773133602277.png",
             },
             {
                 title: "2 Ton Inverter Split AC",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/inverter-ac-500x500.jpeg",
+                image: "/images/stock/hero_ac_1773133602277.png",
             },
             {
                 title: "Cassette AC 2 Ton",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/AA/WD/YX/247573501/cassette-ac-500x500.jpeg",
+                image: "/images/stock/hero_ac_1773133602277.png",
             },
             {
                 title: "Window AC 1 Ton",
-                image:
-                    "https://5.imimg.com/data5/SELLER/Default/2022/5/KD/WH/LM/247573501/window-ac-500x500.jpeg",
+                image: "/images/stock/hero_ac_1773133602277.png",
             },
         ],
     },
