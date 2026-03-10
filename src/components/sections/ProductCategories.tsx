@@ -8,10 +8,9 @@ import { categories } from "@/data/categories";
 export function ProductCategories() {
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    // Stagger entrance via IntersectionObserver (no extra GSAP dep needed here)
     useEffect(() => {
-        const cards = sectionRef.current?.querySelectorAll<HTMLDivElement>(".cat-card");
-        if (!cards) return;
+        const rows = sectionRef.current?.querySelectorAll<HTMLDivElement>(".cat-row");
+        if (!rows) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -24,135 +23,155 @@ export function ProductCategories() {
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.06 }
         );
 
-        cards.forEach((card, i) => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(48px)";
-            card.style.transition = `opacity 0.7s ease ${i * 0.1}s, transform 0.7s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.1}s`;
-            observer.observe(card);
+        rows.forEach((row, i) => {
+            row.style.opacity = "0";
+            row.style.transform = "translateY(32px)";
+            row.style.transition = `opacity 0.7s ease ${i * 0.1}s, transform 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 0.1}s`;
+            observer.observe(row);
         });
 
         return () => observer.disconnect();
     }, []);
 
-    // CSS 3D mouse-tracking tilt
-    function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-        const card = e.currentTarget;
-        const rect = card.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const rotY = ((e.clientX - cx) / (rect.width / 2)) * 12;
-        const rotX = -((e.clientY - cy) / (rect.height / 2)) * 10;
-        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(18px) scale(1.03)`;
-        card.style.boxShadow = `${-rotY * 2}px ${rotX * 2}px 40px rgba(0,0,0,0.18)`;
-    }
-
-    function handleMouseLeave(e: React.MouseEvent<HTMLDivElement>) {
-        const card = e.currentTarget;
-        card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)";
-        card.style.boxShadow = "";
-    }
-
     return (
-        <section ref={sectionRef} className="section-padding bg-background border-t border-border/50 overflow-hidden">
-            <div className="container-custom">
+        <section ref={sectionRef} className="bg-background border-t border-border/50 py-20">
+            <div className="container-custom mb-14">
+                <p className="text-primary text-[10px] font-bold uppercase tracking-[0.25em] mb-3">
+                    What We Offer
+                </p>
+                <h2 className="text-foreground tracking-tighter mb-3">
+                    Products We Provide
+                </h2>
+                <p className="text-muted-foreground text-sm md:text-base max-w-xl">
+                    Premium electrical products across 5 categories — sourced from top brands and delivered across Maharashtra.
+                </p>
+            </div>
 
-                {/* Header */}
-                <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <div>
-                        <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
-                            What We Offer
-                        </p>
-                        <h2 className="text-foreground tracking-tighter">
-                            Products We Provide
-                        </h2>
-                        <p className="mt-3 text-muted-foreground text-sm md:text-base max-w-lg">
-                            Premium electrical products across 5 categories — sourced from top brands and delivered across Maharashtra.
-                        </p>
-                    </div>
-                </div>
+            {/* Full-bleed rows */}
+            {categories.map((cat, i) => {
+                const isEven = i % 2 === 0;
+                return (
+                    <Link
+                        key={cat.slug}
+                        href={`/category/${cat.slug}`}
+                        className="cat-row group block relative overflow-visible border-t border-border/40 last:border-b"
+                        style={{ minHeight: "68vh" }}
+                    >
+                        {/* Soft tinted background strip */}
+                        <div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                            style={{ background: `hsl(${cat.accentHsl} / 0.04)` }}
+                        />
 
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-                    {categories.map((cat, i) => (
-                        <Link
-                            key={cat.slug}
-                            href={`/category/${cat.slug}`}
-                            className={`cat-card block group relative rounded-2xl overflow-hidden bg-gradient-to-br ${cat.gradient} border border-white/70 cursor-pointer`}
-                            style={{ willChange: "transform" }}
-                            onMouseMove={handleMouseMove as never}
-                            onMouseLeave={handleMouseLeave as never}
+                        <div className={`container-custom h-full flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 md:gap-20`}
+                            style={{ minHeight: "68vh" }}
                         >
-                            {/* Glow blob */}
-                            <div
-                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                                style={{
-                                    background: `radial-gradient(circle at 50% 40%, ${cat.spotlightColor} 0%, transparent 70%)`,
-                                }}
-                            />
+                            {/* ── TEXT SIDE ──────────────────────────── */}
+                            <div className="flex-1 py-10 md:py-16 flex flex-col justify-center relative z-10 text-left">
+                                {/* Index + tagline row */}
+                                <div className="flex items-center gap-3 mb-7">
+                                    <span
+                                        className="text-[11px] font-black tracking-[0.2em] opacity-20 select-none"
+                                        style={{ color: `hsl(${cat.accentHsl})` }}
+                                    >
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="w-6 h-px bg-border" />
+                                    <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+                                        {cat.tagline}
+                                    </span>
+                                </div>
 
-                            {/* Floating icon */}
-                            <div className="relative z-10 px-8 pt-10 pb-2 flex items-center gap-4">
-                                <span
-                                    className="text-5xl leading-none select-none"
-                                    style={{ animation: `catFloat ${2.6 + i * 0.25}s ease-in-out infinite` }}
+                                {/* Heading */}
+                                <h3
+                                    className="text-foreground tracking-tighter mb-7 group-hover:text-primary transition-colors duration-500"
+                                    style={{ fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)", lineHeight: 1.1, fontWeight: 800 }}
                                 >
-                                    {cat.icon}
-                                </span>
-                                <span
-                                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-2 py-1 rounded-full border"
-                                    style={{
-                                        color: `hsl(${cat.accentHsl})`,
-                                        borderColor: `hsl(${cat.accentHsl} / 0.35)`,
-                                        background: `hsl(${cat.accentHsl} / 0.08)`,
-                                    }}
-                                >
-                                    {cat.products.length} Products
-                                </span>
-                            </div>
-
-                            {/* Text */}
-                            <div className="relative z-10 px-8 pb-8 pt-4">
-                                <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                                     {cat.name}
                                 </h3>
-                                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                                    {cat.tagline}
-                                </p>
-                                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+
+                                {/* Description */}
+                                <p className="text-muted-foreground text-sm leading-[1.8] max-w-sm mb-9">
                                     {cat.description}
                                 </p>
 
+                                {/* Highlights */}
+                                <ul className="flex flex-col gap-4 mb-10">
+                                    {cat.highlights.map((h) => (
+                                        <li key={h} className="flex items-center gap-3 text-sm text-foreground/65">
+                                            <span
+                                                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                                                style={{ background: `hsl(${cat.accentHsl})` }}
+                                            />
+                                            {h}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* Thin divider before CTA */}
+                                <span className="block w-10 h-px bg-border mb-5" />
+
                                 {/* CTA */}
                                 <div
-                                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 group-hover:gap-3"
+                                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 group-hover:gap-4 w-fit"
                                     style={{ color: `hsl(${cat.accentHsl})` }}
                                 >
-                                    Explore
-                                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                                    Explore Category
+                                    <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
                                 </div>
                             </div>
 
-                            {/* Bottom stripe */}
+                            {/* ── IMAGE SIDE ─────────────────────────── */}
                             <div
-                                className="absolute bottom-0 left-0 right-0 h-1 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                                style={{ background: `hsl(${cat.accentHsl})` }}
-                            />
-                        </Link>
-                    ))}
-                </div>
-            </div>
+                                className="flex-1 relative flex items-center justify-center self-stretch"
+                                style={{ minHeight: "260px" }}
+                            >
+                                {/* Tinted bg panel */}
+                                <div
+                                    className="absolute inset-0 rounded-none transition-opacity duration-500"
+                                    style={{ background: `hsl(${cat.accentHsl} / 0.06)` }}
+                                />
 
-            {/* Floating keyframes injected inline */}
-            <style>{`
-        @keyframes catFloat {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33%       { transform: translateY(-10px) rotate(-3deg); }
-          66%       { transform: translateY(-5px) rotate(2deg); }
-        }
-      `}</style>
+                                {/* Image — overflows the panel on the outer edge for depth */}
+                                <div
+                                    className={`relative z-10 transition-transform duration-700 group-hover:scale-[1.03]`}
+                                    style={{
+                                        width: "min(72%, 340px)",
+                                        aspectRatio: "1 / 1",
+                                        /* Pop out toward the text side */
+                                        transform: isEven
+                                            ? "perspective(900px) rotateY(-4deg) rotateX(2deg) translateX(-5%)"
+                                            : "perspective(900px) rotateY(4deg) rotateX(2deg) translateX(5%)",
+                                        filter: "drop-shadow(0 32px 48px rgba(0,0,0,0.13)) drop-shadow(0 8px 16px rgba(0,0,0,0.08))",
+                                    }}
+                                >
+                                    <img
+                                        src={cat.categoryImage}
+                                        alt={cat.name}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+
+                                {/* Subtle accent circle behind image */}
+                                <div
+                                    className="absolute rounded-full blur-3xl opacity-20 pointer-events-none transition-opacity duration-700 group-hover:opacity-30"
+                                    style={{
+                                        width: "55%",
+                                        aspectRatio: "1",
+                                        background: `hsl(${cat.accentHsl})`,
+                                        top: "50%",
+                                        left: "50%",
+                                        transform: "translate(-50%, -50%)",
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </Link>
+                );
+            })}
         </section>
     );
 }

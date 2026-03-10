@@ -88,12 +88,12 @@ export default async function CategoryPage({ params }: Props) {
                                     transform: "perspective(600px) rotateY(-10deg) rotateX(5deg)",
                                 }}
                             >
-                                <span
-                                    className="text-7xl md:text-9xl leading-none"
+                                <div
+                                    className="w-24 h-24 md:w-36 md:h-36 drop-shadow-2xl"
                                     style={{ animation: "heroSpin 8s ease-in-out infinite" }}
                                 >
-                                    {cat.icon}
-                                </span>
+                                    <img src={cat.categoryImage} alt={cat.name} className="w-full h-full object-contain" />
+                                </div>
                             </div>
                         </div>
                     </div>
