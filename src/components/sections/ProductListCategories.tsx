@@ -1,147 +1,154 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { categories } from "@/data/categories";
 
 export function ProductListCategories() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"],
-    });
-
-    // Subtle parallax for the main images
-    const yParallax = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+    // We track whichever category index is currently hovered.
+    // Default to the first one (0) if none are hovered so it doesn't look empty.
+    const [activeIndex, setActiveIndex] = useState<number>(0);
 
     return (
-        <section ref={containerRef} className="bg-background pt-24 pb-16 overflow-hidden border-b border-border/40">
-            <div className="container-custom max-w-7xl">
+        <section className="bg-background pt-24 pb-16 border-b border-border/40">
+            <div className="container-custom max-w-[1400px]">
 
                 {/* ── HEADER ── */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20"
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="flex flex-col md:flex-row items-end justify-between gap-8 mb-12"
                 >
-                    <div className="inline-flex items-center gap-4 mb-4">
-                        <span className="w-1.5 h-1.5 rounded-none bg-primary" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">
-                            Explore Catalog
-                        </span>
-                        <span className="w-1.5 h-1.5 rounded-none bg-primary" />
+                    <div className="max-w-2xl">
+                        <div className="inline-flex items-center gap-4 mb-4">
+                            <span className="w-1.5 h-1.5 rounded-none bg-primary" />
+                            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">
+                                What We Offer
+                            </span>
+                            <span className="w-1.5 h-1.5 rounded-none bg-primary" />
+                        </div>
+
+                        <h2 className="text-foreground tracking-tight text-3xl md:text-5xl font-black mb-4 leading-none">
+                            Products We <span className="text-muted-foreground/50">Provide</span>
+                        </h2>
+
+                        <p className="text-muted-foreground text-sm leading-relaxed max-w-lg">
+                            Explore our curated selection of premium distributed electrical appliances, sourced strictly from industry-leading manufacturers.
+                        </p>
                     </div>
 
-                    <h2 className="text-foreground tracking-tighter text-4xl md:text-6xl font-black mb-6 leading-none">
-                        All <span className="text-muted-foreground/50">Categories</span>
-                    </h2>
-
-                    <p className="text-muted-foreground text-sm md:text-base leading-[1.8] max-w-xl mx-auto">
-                        Dive deep into our extensive range of industrial and residential electrical solutions safely engineered for longevity.
-                    </p>
+                    <div className="hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                        Hover to Expand
+                        <ArrowUpRight size={14} className="opacity-50" />
+                    </div>
                 </motion.div>
 
-                {/* ── BENTO GRID ── */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                {/* ── ACCORDION GALLERY ── */}
+                <div
+                    className="flex flex-col md:flex-row w-full h-[800px] md:h-[500px] lg:h-[600px] gap-2 md:gap-4 select-none"
+                    onMouseLeave={() => setActiveIndex(0)} // Reset to first on mouse leave
+                >
                     {categories.map((cat, i) => {
-                        // Create a sprawling, asymmetrical bento layout
-                        let colSpan = "md:col-span-4";
-                        let rowSpan = "md:row-span-1";
-                        let isLarge = false;
-
-                        if (i === 0) {
-                            colSpan = "md:col-span-8";
-                            rowSpan = "md:row-span-2";
-                            isLarge = true;
-                        } else if (i === 1 || i === 2) {
-                            colSpan = "md:col-span-4";
-                            rowSpan = "md:row-span-1";
-                        } else if (i === 3) {
-                            colSpan = "md:col-span-7";
-                            rowSpan = "md:row-span-1";
-                            isLarge = true;
-                        } else if (i === 4) {
-                            colSpan = "md:col-span-5";
-                            rowSpan = "md:row-span-1";
-                        }
+                        const isActive = activeIndex === i;
 
                         return (
                             <Link
                                 key={cat.slug}
                                 href={`/category/${cat.slug}`}
-                                className={`group relative block bg-white border border-border/50 overflow-hidden transition-all duration-700 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] ${colSpan} ${rowSpan}`}
-                                style={{
-                                    minHeight: isLarge ? "400px" : "300px"
-                                }}
+                                onMouseEnter={() => setActiveIndex(i)}
+                                // This Flex transition is the magic. 
+                                // Inactive columns are 'flex-1'. Active is a massive 'flex-[3] or flex-[4]'
+                                className={`
+                                    relative flex-1 rounded-sm overflow-hidden border border-border/50 bg-white
+                                    transition-[flex,background-color] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]
+                                    ${isActive ? 'md:flex-[4] lg:flex-[5] flex-[3] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border-transparent' : 'md:flex-1 hidden md:flex opacity-70 hover:opacity-100'}
+                                `}
                             >
-                                {/* Background Accent Glow */}
+                                {/* Active Ambient Glow */}
                                 <div
-                                    className="absolute inset-0 rounded-full blur-[100px] opacity-0 group-hover:opacity-10 scale-50 group-hover:scale-150 transition-all duration-1000 ease-out z-0 pointer-events-none"
-                                    style={{ background: `hsl(${cat.accentHsl})`, transitionDelay: "0.1s" }}
+                                    className={`absolute inset-0 pointer-events-none transition-opacity duration-1000 ${isActive ? 'opacity-10' : 'opacity-0'}`}
+                                    style={{
+                                        background: `radial-gradient(circle at 50% 100%, hsl(${cat.accentHsl}), transparent 70%)`
+                                    }}
                                 />
 
-                                {/* Progress/Accent Bar Top */}
-                                <span
-                                    className="absolute top-0 left-0 h-[3px] w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] z-20 pointer-events-none"
-                                    style={{ background: `hsl(${cat.accentHsl})` }}
+                                {/* Progress Top Bar */}
+                                <div
+                                    className={`absolute top-0 left-0 h-[3px] bg-primary transition-all duration-700 ease-out z-20 ${isActive ? 'w-full' : 'w-0'}`}
+                                    style={{ backgroundColor: `hsl(${cat.accentHsl})` }}
                                 />
 
-                                <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
-                                    {/* TOP CONTENT */}
-                                    <div className="flex items-start justify-between w-full">
-                                        <div className="flex flex-col">
-                                            <div className="flex items-center gap-3 mb-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                                                <span
-                                                    className="w-1.5 h-1.5 rounded-none pointer-events-none"
-                                                    style={{ background: `hsl(${cat.accentHsl})` }}
-                                                />
-                                                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground pointer-events-none">
-                                                    0{i + 1}
-                                                </span>
-                                            </div>
-                                            <h3 className="text-2xl md:text-3xl font-black text-foreground tracking-tighter leading-none group-hover:text-primary transition-colors duration-300">
-                                                {cat.name}
-                                            </h3>
-                                        </div>
+                                {/* ── CONTENT CONTAINER ── */}
+                                <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row">
 
-                                        {/* Floating Explore Arrow Button */}
+                                    {/* VERTICAL HEADER (Always visible on desktop, hidden on mobile) */}
+                                    <div className={`
+                                        hidden md:flex w-full md:w-[80px] h-[80px] md:h-full border-b md:border-b-0 md:border-r border-border/30 
+                                        flex-row md:flex-col items-center justify-between p-6 z-20 bg-white/50 backdrop-blur-sm
+                                        transition-colors duration-500
+                                    `}>
+                                        <span className="text-[10px] font-black text-muted-foreground tracking-[0.2em] transform md:-rotate-90 origin-center whitespace-nowrap">
+                                            0{i + 1}
+                                        </span>
+
+                                        <h3 className="text-sm font-bold tracking-widest uppercase text-foreground transform md:-rotate-90 origin-center whitespace-nowrap hidden md:block">
+                                            {cat.name}
+                                        </h3>
+
                                         <div
-                                            className="w-12 h-12 bg-background border border-border flex items-center justify-center -translate-y-4 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-20"
-                                        >
-                                            <ArrowRight size={18} style={{ color: `hsl(${cat.accentHsl})` }} />
-                                        </div>
+                                            className={`w-2 h-2 rounded-full transition-all duration-500 ${isActive ? 'scale-150' : 'scale-100 opacity-20'}`}
+                                            style={{ backgroundColor: `hsl(${cat.accentHsl})` }}
+                                        />
                                     </div>
 
-                                    {/* BOTTOM CONTENT (Only visible on large blocks for extra detail) */}
-                                    {isLarge && (
-                                        <div className="max-w-xs mt-auto relative z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                                            <p className="text-sm text-foreground/70 font-medium leading-relaxed bg-white/80 backdrop-blur-sm p-4 border border-border/30 shadow-lg">
-                                                {cat.tagline}
+                                    {/* EXPANDED CONTENT AREA */}
+                                    <div className={`
+                                        relative flex-1 h-full flex flex-col items-start justify-end p-8 md:p-12 overflow-hidden
+                                        transition-opacity duration-700 delay-100
+                                        ${isActive ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
+                                    `}>
+
+                                        {/* Massive Background Image Image */}
+                                        <div className={`
+                                            absolute inset-0 z-0 flex items-center justify-center p-12 md:p-24
+                                            transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)]
+                                            ${isActive ? 'scale-100 translate-x-0 opacity-100' : 'scale-90 translate-x-20 opacity-0'}
+                                        `}>
+                                            <div className="relative w-full h-full max-w-[80%] max-h-[80%] flex items-center justify-center">
+                                                <img
+                                                    src={cat.categoryImage}
+                                                    alt={cat.name}
+                                                    className="w-full h-full object-contain filter drop-shadow-2xl"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Content Block layered on top bottom-left */}
+                                        <div className={`
+                                            relative z-10 w-full max-w-sm mt-auto bg-white/90 backdrop-blur-md p-6 border border-border/50 shadow-xl
+                                            transition-all duration-700 delay-200
+                                            ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
+                                        `}>
+                                            <div className="flex items-center justify-between mb-4">
+                                                <h3 className="text-2xl font-black tracking-tight leading-none" style={{ color: `hsl(${cat.accentHsl})` }}>
+                                                    {cat.name}
+                                                </h3>
+                                                <div
+                                                    className="w-10 h-10 border border-border flex items-center justify-center rounded-none bg-background hover:bg-zinc-100 transition-colors"
+                                                >
+                                                    <ArrowUpRight size={16} />
+                                                </div>
+                                            </div>
+                                            <p className="text-sm text-foreground/70 font-medium leading-relaxed">
+                                                {cat.description || cat.tagline}
                                             </p>
                                         </div>
-                                    )}
-                                </div>
 
-                                {/* CENTER IMAGE */}
-                                <div className="absolute inset-0 flex items-center justify-center p-12 pointer-events-none z-0">
-                                    <motion.div
-                                        className="relative w-full h-full flex items-center justify-center"
-                                        style={{ y: yParallax }}
-                                    >
-                                        <img
-                                            src={cat.categoryImage}
-                                            alt={cat.name}
-                                            className="w-full h-full object-contain filter drop-shadow-sm group-hover:drop-shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:-translate-y-4"
-                                            style={{
-                                                maxWidth: isLarge ? "75%" : "85%",
-                                                maxHeight: isLarge ? "75%" : "85%"
-                                            }}
-                                        />
-                                    </motion.div>
+                                    </div>
                                 </div>
                             </Link>
                         );

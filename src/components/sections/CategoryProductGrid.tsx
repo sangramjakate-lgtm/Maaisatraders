@@ -5,10 +5,10 @@ import type { Category } from "@/data/categories";
 import { motion } from "framer-motion";
 
 interface Props {
-  category: Category;
+  cat: Category;
 }
 
-export function CategoryProductGrid({ category: cat }: Props) {
+export function CategoryProductGrid({ cat }: Props) {
   if (!cat.products || cat.products.length === 0) return null;
 
   return (
