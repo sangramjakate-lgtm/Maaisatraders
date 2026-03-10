@@ -156,10 +156,10 @@ export default function Home() {
           </div>
 
           <h1 className="text-foreground mb-8">
-            <span className="jiggly-text block text-primary transform-origin-center">
+            <span className="jiggly-text block text-primary transform-origin-center text-[clamp(2rem,8vw,4.5rem)] leading-[0.9] md:leading-[1.1]">
               Authorized Distributors.
             </span>
-            <span className="jiggly-text block mt-1 transform-origin-center">
+            <span className="jiggly-text block mt-2 transform-origin-center text-[clamp(1.75rem,7vw,4.5rem)] leading-[1]">
               Electrical Experts.
             </span>
           </h1>

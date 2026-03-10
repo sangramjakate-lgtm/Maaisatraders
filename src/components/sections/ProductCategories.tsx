@@ -127,8 +127,7 @@ export function ProductCategories() {
                     <Link
                         key={cat.slug}
                         href={`/category/${cat.slug}`}
-                        className="cat-row block relative overflow-hidden border-t border-border/40 last:border-b"
-                        style={{ minHeight: "70vh" }}
+                        className="cat-row block relative overflow-hidden border-t border-border/40 last:border-b min-h-[50vh] md:min-h-[70vh]"
                     >
                         {/* Accent left bar — scaleY from top */}
                         <span
@@ -152,8 +151,7 @@ export function ProductCategories() {
                         </span>
 
                         <div
-                            className={`container-custom h-full flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 md:gap-20`}
-                            style={{ minHeight: "70vh", position: "relative", zIndex: 10 }}
+                            className={`container-custom h-full flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 md:gap-20 min-h-[50vh] md:min-h-[70vh] relative z-10`}
                         >
                             {/* ── TEXT ─────────────────────────────── */}
                             <div className="flex-1 py-10 md:py-16 flex flex-col justify-center text-left">
