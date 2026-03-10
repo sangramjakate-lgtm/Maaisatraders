@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { Category } from "@/data/categories";
 import { motion } from "framer-motion";
 
@@ -48,58 +49,64 @@ export function CategoryProductGrid({ cat }: Props) {
 
         {/* ─── ANIMATED PRODUCT GRID ─── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {cat.products.map((product, i) => (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              key={i}
-              className="group relative flex flex-col bg-card border border-border/40 hover:border-primary/40 rounded-none overflow-hidden transition-colors duration-500"
-            >
-              {/* Top Accent Line */}
-              <span
-                className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500 ease-out z-20"
-                style={{ backgroundColor: `hsl(${cat.accentHsl})` }}
-              />
+          {cat.products.map((product, i) => {
+            // Helper to generate IDs matching the ones in products.ts
+            const productId = product.title.toLowerCase().replace(/ /g, '-').replace(/[()]/g, '');
 
-              {/* ── IMAGE SECTION ── */}
-              <div className="relative w-full aspect-square p-8 flex items-center justify-center overflow-hidden border-b border-border/20 z-10 bg-white">
-                <motion.div
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="w-full h-full relative"
-                >
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-contain filter group-hover:drop-shadow-lg transition-all duration-500"
-                    unoptimized
-                  />
-                </motion.div>
-
-                {/* Overlay glow on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: `hsl(${cat.accentHsl})` }}
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                key={i}
+                className="group relative flex flex-col bg-card border border-border/40 hover:border-primary/40 rounded-none overflow-hidden transition-colors duration-500"
+              >
+                <Link href={`/product/${productId}`} className="absolute inset-0 z-30" />
+                {/* Top Accent Line */}
+                <span
+                  className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500 ease-out z-20"
+                  style={{ backgroundColor: `hsl(${cat.accentHsl})` }}
                 />
-              </div>
 
-              {/* ── TEXT SECTION ── */}
-              <div className="p-6 flex flex-col relative z-20 bg-background/50">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
-                    Model {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: `hsl(${cat.accentHsl})` }} />
+                {/* ── IMAGE SECTION ── */}
+                <div className="relative w-full aspect-square p-8 flex items-center justify-center overflow-hidden border-b border-border/20 z-10 bg-white">
+                  <motion.div
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="w-full h-full relative"
+                  >
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      className="object-contain filter group-hover:drop-shadow-lg transition-all duration-500"
+                      unoptimized
+                    />
+                  </motion.div>
+
+                  {/* Overlay glow on hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
+                    style={{ background: `hsl(${cat.accentHsl})` }}
+                  />
                 </div>
-                <h3 className="text-sm md:text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-400">
-                  {product.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* ── TEXT SECTION ── */}
+                <div className="p-6 flex flex-col relative z-20 bg-background/50">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
+                      Model {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: `hsl(${cat.accentHsl})` }} />
+                  </div>
+                  <h3 className="text-sm md:text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-400">
+                    {product.title}
+                  </h3>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

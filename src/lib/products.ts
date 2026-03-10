@@ -15,10 +15,11 @@ export interface Product {
 }
 
 export const allProducts: Product[] = [
+    // ─── FANS (6 Products) ─────────────────────────────────────────
     {
         id: "havells-opus-8-blade-ceiling-fan",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577534893/WX/TD/FW/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-2-500x500.jpeg",
+        image: "/images/products/opus-8.png",
         title: "Havells Opus 8 Blade Ceiling Fan",
         price: "Contact for Quote",
         description: "The Havells Opus 8 Blade Ceiling Fan combines high-end aesthetic appeal with powerful air delivery. Engineered with superior metallic finish blades, it ensures optimum performance even at low voltages.",
@@ -58,269 +59,305 @@ export const allProducts: Product[] = [
         ]
     },
     {
-        id: "led-light-ceiling-fan",
+        id: "havells-bldc-ceiling-fan",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577539635/ZY/NV/WS/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-1-500x500.jpeg",
-        title: "Led Light Ceiling Fan",
+        image: "/images/products/indigo-blue.png",
+        title: "Havells BLDC Ceiling Fan",
         price: "Contact for Quote",
-        description: "A compact and incredibly stylish LED fan unit that serves as a central room fixture. Combines multi-functional utility with reliable air delivery built to last for thousands of operational hours.",
+        description: "Save up to 60% on your electricity bills with the intelligent BLDC motor architecture in this modern Havells fan. Includes inverter stabilization technology for consistent performance.",
         stats: [
-            { label: "Type", value: "Underlight Fan" },
-            { label: "Material", value: "Anti-Rust Aluminum" },
-            { label: "Air Delivery", value: "230 CMM" },
-            { label: "RPM", value: "350 High Speed" },
+            { label: "Motor", value: "Brushless DC (BLDC)" },
+            { label: "Power", value: "28 Watts at Max Speed" },
+            { label: "Remote", value: "RF Remote Included" },
+            { label: "Efficiency", value: "A++ Energy Class" },
+        ]
+    },
+    {
+        id: "havells-underlight-ceiling-fan",
+        category: "Fans",
+        image: "/images/products/florence-walnut.png",
+        title: "Havells Underlight Ceiling Fan",
+        price: "Contact for Quote",
+        description: "Dual-purpose underlight ceiling fan with elegant wood-finish blades. Eliminates the need for multiple ceiling fixtures while providing a magnificent centerpiece and grand air flow.",
+        stats: [
+            { label: "Finish", value: "Antique Walnut Texture" },
+            { label: "Blades", value: "5 Premium Blades" },
+            { label: "Lighting", value: "Built-in Light Kit" },
+            { label: "Operation", value: "Pull Chain / Remote" },
         ]
     },
     {
         id: "usha-hunter-luxury-ceiling-fan",
         category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577541187/EN/LT/TU/247573501/whatsapp-image-2026-01-21-at-11-25-43-am-2-500x500.jpeg",
+        image: "/images/products/usha-striker.jpeg",
         title: "Usha Hunter Luxury Ceiling Fan",
         price: "Contact for Quote",
         description: "The Usha Hunter series represents the pinnacle of premium fan design. Boasting beautiful wooden-finish blades and an elegant motor housing, it is the ultimate statement piece for luxury homes.",
         stats: [
+            { label: "Design", value: "Royal Luxury Edition" },
             { label: "Finish", value: "Classic Wooden Texture" },
-            { label: "Operation", value: "Whisper Quiet" },
-            { label: "Durability", value: "Dust Resistant" },
-            { label: "Warranty", value: "3 Years Comprehensive" },
-        ]
-    },
-    {
-        id: "havells-water-geyser",
-        category: "Cables & Wires",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577527120/IE/US/NB/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-3-jpeg-500x500.jpeg",
-        title: "Havells Water Geyser",
-        price: "Contact for Quote",
-        description: "High-performance instant water geyser suitable for bathrooms and kitchens. Designed with rust-resistant ABS bodies and advanced safety features including auto cut-off protection.",
-        stats: [
-            { label: "Capacity", value: "10L / 15L / 25L" },
-            { label: "Heating Element", value: "Incoloy Glass Coated" },
-            { label: "Inner Tank", value: "Feroglas Technology" },
-            { label: "Safety", value: "Multi-Function Valve" },
-        ]
-    },
-    {
-        id: "havells-electric-storage-water-heater",
-        category: "Cables & Wires",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577533832/FQ/QV/SL/247573501/electric-storage-water-heater-500x500.jpeg",
-        title: "Havells Electric Storage Water Heater",
-        price: "Contact for Quote",
-        description: "The premier choice for large families. This storage water heater retains hot water for longer durations using high-density PUF insulation, drastically reducing electricity bills.",
-        stats: [
-            { label: "Insulation", value: "High-Density PUF" },
-            { label: "Tank Warranty", value: "7 Years Manufacturer" },
-            { label: "Installation", value: "Vertical Wall Mount" },
-            { label: "Bar Pressure", value: "Up to 8 Bars Rated" },
-        ]
-    },
-    {
-        id: "standard-water-geyser",
-        category: "Cables & Wires",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577451828/PW/XG/LT/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-3-jpeg-500x500.jpeg",
-        title: "Standard Water Geyser",
-        price: "Contact for Quote",
-        description: "Reliable and cost-effective instant heating solution. Ideal for high-rise buildings and apartments, providing consistent hot water output on demand.",
-        stats: [
-            { label: "Type", value: "Instant Heating" },
-            { label: "Wattage", value: "3000W / 4500W" },
-            { label: "Indicator", value: "LED Status Light" },
-            { label: "Safety", value: "Thermal Cut-off" },
-        ]
-    },
-    {
-        id: "premium-ro-water-purifier",
-        category: "Switches & Switchgear",
-        image: "/images/products/fr-pvc-green.png",
-        title: "Premium Ro Water Purifier",
-        price: "Contact for Quote",
-        description: "Advanced RO + UV + UF purification system that eliminates dissolved impurities, bacteria, and viruses. Features an alkaline cartridge to maintain optimal pH levels.",
-        stats: [
-            { label: "Purification", value: "RO+UV+UF+Alkaline" },
-            { label: "Tank Capacity", value: "8 Liters Storage" },
-            { label: "Filter Life", value: "6000L Rated Capacity" },
-            { label: "Display", value: "Smart LED Indicators" },
-        ]
-    },
-    {
-        id: "havells-water-purifier",
-        category: "Switches & Switchgear",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577529649/HT/OD/FA/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg",
-        title: "Havells Water Purifier",
-        price: "Contact for Quote",
-        description: "Compact and aesthetically pleasing Havells water purifier providing 100% RO and UV purified water safely into its built-in food-grade tank.",
-        stats: [
-            { label: "Brand", value: "Havells Genuine" },
-            { label: "Operation", value: "Fully Automatic" },
-            { label: "Design", value: "Space-Saving Wall Mount" },
-            { label: "Voltage", value: "Operates 150V-280V" },
-        ]
-    },
-    {
-        id: "uv-water-purifier",
-        category: "Switches & Switchgear",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577451934/XF/KR/FI/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-2-jpeg-500x500.jpeg",
-        title: "UV Water Purifier",
-        price: "Contact for Quote",
-        description: "Sleek UV purification system aimed at low TDS municipal water sources. It effectively kills completely harmful micro-organisms without removing essential minerals.",
-        stats: [
-            { label: "Purification Level", value: "UV + UF" },
-            { label: "TDS Control", value: "Not Required (<200 TDS)" },
-            { label: "Flow Rate", value: "2L / Minute" },
-            { label: "Design", value: "Table Top / Wall Mount" },
-        ]
-    },
-    {
-        id: "ceiling-fan-blade-set",
-        category: "Air Conditioners",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577538710/TU/SN/HS/247573501/whatsapp-image-2026-01-21-at-11-25-45-am-500x500.jpeg",
-        title: "Ceiling Fan Blade Set",
-        price: "Contact for Replacement Quote",
-        description: "Original OEM replacement fan blade sets. Meticulously balanced to prevent wobbling and restore smooth, quiet operation to your premium ceiling fans.",
-        stats: [
-            { label: "Material", value: "Anti-Bend Aluminum" },
-            { label: "Sets", value: "3 or 4 Blade Packs" },
-            { label: "Compatibility", value: "Universal Havells Range" },
-            { label: "Coating", value: "Anti-Dust Finish" },
-        ]
-    },
-    {
-        id: "13",
-        category: "Fans",
-        image: "/images/products/indigo-blue.png",
-        title: "Havells Bldc Ceiling Fans (Model A)",
-        price: "Contact for Quote",
-        description: "Save up to 60% on your electricity bills with the intelligent BLDC motor architecture in this modern Havells fan. Includes inverter stabilization technology.",
-        stats: [
-            { label: "Motor", value: "Brushless DC (BLDC)" },
-            { label: "Power Consumption", value: "28 Watts" },
-            { label: "Remote", value: "RF Remote Included" },
-            { label: "Eco-Friendly", value: "Yes" },
-        ]
-    },
-    {
-        id: "havells-bldc-ceiling-fans-b",
-        category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/1/577542711/XA/XJ/FN/247573501/whatsapp-image-2026-01-21-at-11-25-44-am-500x500.jpeg",
-        title: "Havells Bldc Ceiling Fans (Model B)",
-        price: "Contact for Quote",
-        description: "High-speed BLDC variant featuring sweeping metallic blade designs for improved aesthetics in living rooms and guest halls.",
-        stats: [
-            { label: "Motor", value: "BLDC High RPM" },
-            { label: "Noise Level", value: "Ultra Quiet < 40dB" },
-            { label: "Smart Ready", value: "IoT Compatible" },
+            { label: "Operation", value: "Ultra-Quiet Performance" },
             { label: "Warranty", value: "3 Years Standard" },
         ]
     },
+
+    // ─── CABLES & WIRES (4 Products) ───────────────────────────────
     {
-        id: "15",
-        category: "Fans",
-        image: "/images/products/florence-walnut.png",
-        title: "Havells Underlight Ceiling Fan",
+        id: "havells-fr-pvc-insulated-cable",
+        category: "Cables & Wires",
+        image: "/images/products/fr-pvc-green.png",
+        title: "Havells FR PVC Insulated Cable",
         price: "Contact for Quote",
-        description: "Dual-purpose underlight ceiling fan. Eliminates the need for multiple ceiling fixtures while providing a magnificent centerpiece and grand air flow.",
+        description: "Havells Flame Retardant (FR) PVC insulated cables are manufactured with premium grade PVC resin and high-quality CC copper. They ensure maximum safety for building installations.",
         stats: [
-            { label: "Design Type", value: "Royal Chandelier Equivalent" },
-            { label: "Blades", value: "5 Wood-Finish Blades" },
-            { label: "Light Control", value: "Pull Chain or Remote" },
-            { label: "Weight", value: "Approx 8kg" },
+            { label: "Insulation", value: "FR Grade PVC" },
+            { label: "Conductor", value: "99.9% Pure Copper" },
+            { label: "Standard", value: "ISI Licensed" },
+            { label: "Usage", value: "House Wiring" },
         ]
     },
     {
-        id: "havells-bldc-ceiling-fans-c",
-        category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584514905/FS/EC/AW/247573501/1000055173-500x500.jpg",
-        title: "Havells Bldc Ceiling Fans (Model C)",
+        id: "havells-life-shield-hffr-cable",
+        category: "Cables & Wires",
+        image: "/images/products/life-shield-black.jpg",
+        title: "Havells Life Shield HFFR Cable",
         price: "Contact for Quote",
-        description: "A compact BLDC model perfect for smaller rooms or offices. Efficient running performance even during profound voltage drops.",
+        description: "Life Shield HFFR (Halogen Free Flame Retardant) cables provide enhanced safety during fire emergencies by not emitting toxic smoke or corrosive gases.",
         stats: [
-            { label: "Sweep Size", value: "900mm (36 Inches)" },
-            { label: "Motor Size", value: "Compact Copper" },
-            { label: "Energy Class", value: "A++" },
-            { label: "Remote", value: "Included Point-Anywhere RF" },
+            { label: "Type", value: "Halogen Free (HFFR)" },
+            { label: "Safety", value: "Minimal Smoke Emission" },
+            { label: "Temperature", value: "High Heat Resistant" },
+            { label: "Compliance", value: "RoHS Compliant" },
         ]
     },
     {
-        id: "16",
-        category: "Fans",
-        image: "/images/products/usha-striker.jpeg",
-        title: "Usha Hunter Luxury Ceiling Fan",
+        id: "multi-strand-flexible-wire",
+        category: "Cables & Wires",
+        image: "/images/products/single-core-wire.png",
+        title: "Multi Strand Flexible Wire",
         price: "Contact for Quote",
-        description: "Make a statement with the Royal Luxury ceiling fan. Plated housing covers and elegantly carved blade brackets guarantee a sophisticated and regal finish.",
+        description: "Superior multi-strand wires designed for maximum flexibility and ease of installation in compact conduit systems. Ideal for panel wiring and domestic appliances.",
         stats: [
-            { label: "Finish", value: "Antique Brass/Bronze" },
-            { label: "Blades", value: "High Grade ABS" },
-            { label: "Downrod", value: "Included Extension Kit" },
-            { label: "Warranty", value: "2 Years Motor" },
+            { label: "Flexibility", value: "Class 5 Multi-Strand" },
+            { label: "Length", value: "90 Meters Standard" },
+            { label: "Current", value: "High Load Handling" },
+            { label: "Jacket", value: "Anti-Abrasion PVC" },
         ]
     },
     {
-        id: "havells-bldc-fan",
-        category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584514939/DL/HC/LS/247573501/1000055174-500x500.jpg",
-        title: "Havells Bldc Fan",
+        id: "armoured-control-cable",
+        category: "Cables & Wires",
+        image: "/images/products/armoured-cable.png",
+        title: "Armoured Control Cable",
         price: "Contact for Quote",
-        description: "Experience the difference of brushless technology. Run your fan longer on inverters and enjoy noiseless environments for years.",
+        description: "Heavy-duty armoured cables for industrial applications. Provides high mechanical protection and electrical stability in underground and exposed installations.",
         stats: [
-            { label: "Inverter Runtime", value: "Extended (3x longer)" },
-            { label: "Style", value: "Contemporary Minimalist" },
-            { label: "RPM", value: "High Speed Configured" },
-            { label: "Color Options", value: "White, Brown, Grey" },
+            { label: "Protection", value: "Steel Tape/Wire Armoured" },
+            { label: "Layers", value: "Multi-Core Configuration" },
+            { label: "Outer Sheath", value: "ST-2 Type PVC" },
+            { label: "Environment", value: "Weather & Oil Resistant" },
+        ]
+    },
+
+    // ─── SWITCHES & SWITCHGEAR (5 Products) ────────────────────────
+    {
+        id: "havells-mcb-single-pole",
+        category: "Switches & Switchgear",
+        image: "/images/products/mcb-single.jpg",
+        title: "Havells MCB Single Pole",
+        price: "Contact for Quote",
+        description: "Advanced Miniature Circuit Breaker (MCB) providing reliable protection against short circuits and overloads. Features high breaking capacity and rapid tripping mechanism.",
+        stats: [
+            { label: "Capacity", value: "6A - 63A Available" },
+            { label: "Poles", value: "Single Pole (SP)" },
+            { label: "Sensitivity", value: "C Curve Standard" },
+            { label: "Indicator", value: "On/Off Status Flag" },
         ]
     },
     {
-        id: "havells-opus-ceiling-fan",
-        category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584516059/KZ/HH/IZ/247573501/1000055179-500x500.jpg",
-        title: "Havells Opus Ceiling Fan",
+        id: "havells-distribution-board",
+        category: "Switches & Switchgear",
+        image: "/images/products/distribution-board.jpg",
+        title: "Havells Distribution Board",
         price: "Contact for Quote",
-        description: "A standard Opus model variant, offering dependable, low-maintenance airflow using premium materials sourced exclusively from the best suppliers.",
+        description: "Ergonomically designed distribution boards for centralized power control. Manufactured with high-grade CRCA steel and finished with epoxy powder coating for durability.",
         stats: [
-            { label: "Material", value: "CRCA Steel Body" },
-            { label: "Stator Size", value: "Enhanced 14 Pole" },
-            { label: "Air Delivery", value: "240 CMM" },
-            { label: "Install Type", value: "Standard Ceiling" },
+            { label: "Material", value: "CRCA Sheet Steel" },
+            { label: "Finish", value: "Rust-Resistant Powder" },
+            { label: "Ways", value: "4/6/8/12/16 Ways" },
+            { label: "Entry", value: "Top & Bottom Cable Entry" },
         ]
     },
     {
-        id: "luxury-ceiling-fans",
-        category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584517154/OO/NF/WN/247573501/1000055182-500x500.jpg",
-        title: "Luxury Ceiling Fans",
+        id: "modular-switch-plate-6a",
+        category: "Switches & Switchgear",
+        image: "/images/products/modular-plate-6a.jpg",
+        title: "Modular Switch Plate 6A",
         price: "Contact for Quote",
-        description: "Versatile luxury ceiling fans built for premium retail spaces, hotel lobbies, and large domestic homes aiming to elevate their decor dramatically.",
+        description: "Elegant modular switch plates that blend perfectly with modern interior designs. Features smooth click operation and silver-plated contacts for long life.",
         stats: [
-            { label: "Range", value: "Designer Grade" },
-            { label: "Power", value: "Optimized Performance" },
-            { label: "Maintenance", value: "Low Effort" },
-            { label: "Bearing", value: "Double Ball Bearing Unit" },
+            { label: "Type", value: "Modular Design" },
+            { label: "Contacts", value: "Silver Cadmium Oxide" },
+            { label: "Material", value: "Flame Retardant Polycarbonate" },
+            { label: "Color", value: "Various Finishes Available" },
         ]
     },
     {
-        id: "havells-ceiling-fan-bldc",
-        category: "Fans",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584514964/ES/OP/KN/247573501/1000055175-500x500.jpg",
-        title: "Havells Ceiling Fan Bldc",
+        id: "smart-touch-panel",
+        category: "Switches & Switchgear",
+        image: "/images/products/smart-touch.jpg",
+        title: "Smart Touch Panel",
         price: "Contact for Quote",
-        description: "Another fantastic entry in the BLDC category. Features a wide, aerodynamic blade design specifically to push maximum air vertically.",
+        description: "Feather-touch control panels for smart lighting and appliance management. Compatible with home automation systems via Wi-Fi or Bluetooth.",
         stats: [
-            { label: "Design Mode", value: "Wide Spread Circulation" },
-            { label: "RPM Control", value: "Smart Chip Regulated" },
-            { label: "Input Voltage", value: "140V-285V AC Compatible" },
-            { label: "Timer", value: "1/2/4/8 Hours" },
+            { label: "Control", value: "Capacitive Touch" },
+            { label: "Connectivity", value: "Wi-Fi / ZigBee Ready" },
+            { label: "Indicators", value: "LED Backlit Buttons" },
+            { label: "Compatibility", value: "Supports Voice Control" },
         ]
     },
     {
-        id: "led-lights-luxury-ceiling-fan-variant",
+        id: "rccb-double-pole",
+        category: "Switches & Switchgear",
+        image: "/images/products/rccb-double.jpg",
+        title: "RCCB Double Pole",
+        price: "Contact for Quote",
+        description: "Residual Current Circuit Breaker (RCCB) provides life safety protection against electric shocks and prevents fire hazards caused by earth leakage currents.",
+        stats: [
+            { label: "Sensitivity", value: "30mA / 100mA / 300mA" },
+            { label: "Type", value: "AC / A Type" },
+            { label: "Mechanism", value: "Current Sensing" },
+            { label: "Poles", value: "Double Pole (DP)" },
+        ]
+    },
+
+    // ─── LIGHTING (5 Products) ─────────────────────────────────────
+    {
+        id: "havells-led-batten-20w",
         category: "Lighting",
-        image: "https://5.imimg.com/data5/SELLER/Default/2026/2/584517263/JW/ZX/MJ/247573501/1000055180-500x500.jpg",
-        title: "Led Lights Luxury Ceiling Fan (Variant)",
+        image: "/images/products/led-batten.jpg",
+        title: "Havells LED Batten 20W",
         price: "Contact for Quote",
-        description: "This variant of the LED luxury series introduces a warm-lighting option for coziness with a brushed nickel blade finishing for modern contrasts.",
+        description: "Slim and efficient LED batten that provides glare-free, uniform lighting. Cuts electricity costs significantly while delivering superior brightness compared to traditional tube lights.",
         stats: [
-            { label: "LED Mode", value: "Warm White / Cool White / Natural" },
-            { label: "Blade Finish", value: "Brushed Nickel Texture" },
-            { label: "Power", value: "70 Watts Max Output" },
-            { label: "Style", value: "Modern Urban" },
+            { label: "Wattage", value: "20 Watts" },
+            { label: "Lumens", value: "2000lm Output" },
+            { label: "Life", value: "25000 Burning Hours" },
+            { label: "CCT", value: "6500K Cool White" },
         ]
-    }
+    },
+    {
+        id: "havells-round-led-panel",
+        category: "Lighting",
+        image: "/images/products/round-panel.jpg",
+        title: "Havells Round LED Panel",
+        price: "Contact for Quote",
+        description: "Elegant round recessed LED panel perfect for false ceilings. Features a high-efficiency driver and high-quality light guide plate for soft, shadow-free light.",
+        stats: [
+            { label: "Beam Angle", value: "110 Degrees Wide" },
+            { label: "Mounting", value: "Recessed / Surface" },
+            { label: "Protection", value: "Surge Protection up to 3kV" },
+            { label: "Design", value: "Ultra-Slim Profile" },
+        ]
+    },
+    {
+        id: "decorative-pendant-light",
+        category: "Lighting",
+        image: "/images/products/pendant-light.jpg",
+        title: "Decorative Pendant Light",
+        price: "Contact for Quote",
+        description: "Stunning pendant light fixture designed to provide character to any room. Ideal for over-the-counter lighting in kitchens or as a centerpiece in dining areas.",
+        stats: [
+            { label: "Style", value: "Contemporary Minimalist" },
+            { label: "Adjustment", value: "Adjustable Cord Length" },
+            { label: "Bulb Type", value: "E27 / LED Compatible" },
+            { label: "Construction", value: "Metallic with Matte Finish" },
+        ]
+    },
+    {
+        id: "led-strip-light-5m",
+        category: "Lighting",
+        image: "/images/products/strip-light.jpg",
+        title: "LED Strip Light 5M",
+        price: "Contact for Quote",
+        description: "Flexible LED strip lights for ambient and decorative lighting applications. Ideal for coves, cabinets, and backlighting requirements.",
+        stats: [
+            { label: "Length", value: "5 Meters Reel" },
+            { label: "IP Rating", value: "IP20 / IP65 Available" },
+            { label: "Density", value: "60 LEDs per Meter" },
+            { label: "Adhesive", value: "3M Tape Backing" },
+        ]
+    },
+    {
+        id: "surface-mount-spot-light",
+        category: "Lighting",
+        image: "/images/products/spot-light.jpg",
+        title: "Surface Mount Spot Light",
+        price: "Contact for Quote",
+        description: "Compact surface-mount spotlight for focused illumination. Perfect for highlighting artworks, cabinets, or specific architectural features.",
+        stats: [
+            { label: "Rotation", value: "Tiltable Head" },
+            { label: "Color", value: "White / Natural / Warm" },
+            { label: "Efficiency", value: "COB LED Technology" },
+            { label: "Body", value: "Die-Cast Aluminum" },
+        ]
+    },
+
+    // ─── AIR CONDITIONERS (4 Products) ─────────────────────────────
+    {
+        id: "havells-1.5-ton-split-ac",
+        category: "Air Conditioners",
+        image: "/images/products/split-ac-1.5.jpg",
+        title: "Havells 1.5 Ton Split AC",
+        price: "Contact for Quote",
+        description: "Energy-efficient 1.5 ton split AC with inverter technology. Features anti-corrosive coating and rapid cooling mode for extreme summers.",
+        stats: [
+            { label: "Capacity", value: "1.5 Ton" },
+            { label: "Rating", value: "5 Star BEE" },
+            { label: "Technology", value: "Dual Inverter" },
+            { label: "Condenser", value: "100% Copper Coil" },
+        ]
+    },
+    {
+        id: "2-ton-inverter-split-ac",
+        category: "Air Conditioners",
+        image: "/images/products/inverter-ac-2.jpg",
+        title: "2 Ton Inverter Split AC",
+        price: "Contact for Quote",
+        description: "Powerful 2 ton AC designed for larger rooms. Maintains whisper-quiet operation while providing uniform cooling through 4-way air swing.",
+        stats: [
+            { label: "Capacity", value: "2 Ton" },
+            { label: "Swing", value: "4-Way Auto Swing" },
+            { label: "Filter", value: "PM 2.5 Filter Built-in" },
+            { label: "Noise", value: "Ultra Quiet Operation" },
+        ]
+    },
+    {
+        id: "cassette-ac-2-ton",
+        category: "Air Conditioners",
+        image: "/images/products/cassette-ac.jpg",
+        title: "Cassette AC 2 Ton",
+        price: "Contact for Quote",
+        description: "Space-saving 360-degree cassette AC for commercial spaces and premium living halls. Provides unobtrusive, powerful vertical cooling.",
+        stats: [
+            { label: "Installation", value: "Ceiling Mounted" },
+            { label: "Casing", value: "Galvanized Steel" },
+            { label: "Coverage", value: "360 Degree Airflow" },
+            { label: "Usage", value: "Commercial / Premium Residential" },
+        ]
+    },
+    {
+        id: "window-ac-1-ton",
+        category: "Air Conditioners",
+        image: "/images/products/window-ac.jpg",
+        title: "Window AC 1 Ton",
+        price: "Contact for Quote",
+        description: "Compact and easy-to-install 1 ton window AC. Reliable cooling performance with low maintenance requirements for smaller spaces.",
+        stats: [
+            { label: "Capacity", value: "1 Ton" },
+            { label: "Size", value: "Standard Window Cutout" },
+            { label: "Refrigerant", value: "R32 Eco Friendly" },
+            { label: "Maintenance", value: "Slide-Out Filter" },
+        ]
+    },
 ];
