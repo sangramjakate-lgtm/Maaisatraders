@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -12,6 +12,7 @@ if (typeof window !== "undefined") {
 
 export default function About() {
     const container = useRef<HTMLElement>(null);
+    const [hoveredBox, setHoveredBox] = useState<"mission" | "stats" | null>(null);
 
     useGSAP(
         () => {
@@ -55,6 +56,21 @@ export default function About() {
                     end: "bottom 35%",
                     scrub: 1, // Smooth, slow scrub
                 }
+            });
+
+            // Parallax element helper
+            gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((elem) => {
+                const speed = parseFloat(elem.getAttribute("data-parallax") || "0.1");
+                gsap.to(elem, {
+                    y: () => `${-100 * speed}px`,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true,
+                    }
+                });
             });
 
             // Snappy scroll-triggered sections
@@ -182,11 +198,18 @@ export default function About() {
                 <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("/images/noise.png")' }} />
 
                 <div className="container-custom max-w-5xl relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 group/swap">
 
                         {/* Huge Mission Block */}
-                        <div className="reveal-section md:col-span-8 bg-white border border-border/50 p-6 md:p-10 shadow-sm relative overflow-hidden group">
-                            <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-700" />
+                        <div
+                            onMouseEnter={() => setHoveredBox('mission')}
+                            onMouseLeave={() => setHoveredBox(null)}
+                            className={`reveal-section md:col-span-8 bg-white border border-border/50 p-6 md:p-10 shadow-sm relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] origin-left z-10
+                                ${hoveredBox === 'stats' ? 'md:scale-[0.95] md:-translate-x-4 md:opacity-40 md:blur-[2px]' : ''}
+                                ${hoveredBox === 'mission' ? 'md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] md:scale-[1.02] z-20' : ''}
+                            `}
+                        >
+                            <div data-parallax="0.2" className="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl transition-colors duration-700 pointer-events-none" />
                             <p className="text-primary text-[9px] md:text-[10px] font-black uppercase tracking-[0.25em] mb-4 md:mb-5 flex items-center gap-2 md:gap-3">
                                 <span className="w-6 md:w-8 h-[1px] bg-primary" /> Our Mission
                             </p>
@@ -199,8 +222,15 @@ export default function About() {
                         </div>
 
                         {/* Stats / Quick Facts */}
-                        <div className="reveal-section md:col-span-4 bg-primary text-primary-foreground p-6 md:p-8 flex flex-col justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] mix-blend-overlay" />
+                        <div
+                            onMouseEnter={() => setHoveredBox('stats')}
+                            onMouseLeave={() => setHoveredBox(null)}
+                            className={`reveal-section md:col-span-4 bg-primary text-primary-foreground p-6 md:p-8 flex flex-col justify-center relative overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] origin-right z-10
+                                ${hoveredBox === 'stats' ? 'md:-translate-x-[40%] md:scale-[1.15] md:shadow-[0_40px_100px_-20px_rgba(0,100,50,0.5)] z-30' : ''}
+                                ${hoveredBox === 'mission' ? 'md:scale-[0.95] md:translate-x-4 md:opacity-40' : ''}
+                            `}
+                        >
+                            <div data-parallax="-0.15" className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] mix-blend-overlay" />
                             <div className="relative z-10">
                                 <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] mb-2 md:mb-3 opacity-80">Established</p>
                                 <div className="text-4xl md:text-5xl font-black tracking-tighter mb-4 md:mb-6">2014</div>
@@ -268,23 +298,17 @@ export default function About() {
                                 colorHsl: "150, 100%, 40%" // Green accent
                             }
                         ].map((feature, i) => (
-                            <div key={i} className="stagger-card group relative flex flex-col items-start text-left p-6 md:p-8 bg-white border border-border/50 overflow-hidden transition-all duration-500 hover:border-transparent hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)]">
-                                {/* Ambient Hover Glow */}
-                                <div
-                                    className="absolute inset-0 bg-radial-gradient blur-[60px] opacity-0 group-hover:opacity-10 scale-50 group-hover:scale-150 transition-all duration-700 pointer-events-none"
-                                    style={{ background: `radial-gradient(circle at center, hsl(${feature.colorHsl}), transparent 70%)` }}
-                                />
-
-                                <div className="relative z-10 w-full">
+                            <div key={i} className="stagger-card group relative flex flex-col items-start text-left p-6 md:p-8 bg-white border border-border/50 overflow-hidden transition-all duration-500 hover:bg-primary hover:border-transparent hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(0,100,50,0.3)]">
+                                <div className="relative z-10 w-full transition-colors duration-500">
                                     <div className="flex justify-between items-start mb-6 md:mb-8">
-                                        <div className="w-10 h-10 md:w-12 md:h-12 border border-border flex items-center justify-center bg-background group-hover:bg-primary/5 transition-colors duration-300">
-                                            <CheckCircle2 className="text-muted-foreground group-hover:text-primary transition-colors duration-300 w-4 h-4 md:w-5 md:h-5" strokeWidth={2} />
+                                        <div className="w-10 h-10 md:w-12 md:h-12 border border-border group-hover:border-white/30 flex items-center justify-center bg-background group-hover:bg-white/10 transition-colors duration-500">
+                                            <CheckCircle2 className="text-muted-foreground group-hover:text-white transition-colors duration-500 w-4 h-4 md:w-5 md:h-5" strokeWidth={2} />
                                         </div>
-                                        <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-muted-foreground/50">0{i + 1}</span>
+                                        <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-muted-foreground/50 group-hover:text-white/70 transition-colors duration-500">0{i + 1}</span>
                                     </div>
 
-                                    <h3 className="text-lg md:text-xl font-black text-foreground mb-2 md:mb-3 uppercase tracking-tight leading-none group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                                    <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{feature.desc}</p>
+                                    <h3 className="text-lg md:text-xl font-black text-foreground mb-2 md:mb-3 uppercase tracking-tight leading-none group-hover:text-white transition-colors duration-500">{feature.title}</h3>
+                                    <p className="text-muted-foreground text-xs md:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-500">{feature.desc}</p>
                                 </div>
                             </div>
                         ))}
