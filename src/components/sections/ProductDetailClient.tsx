@@ -114,7 +114,7 @@ export function ProductDetailClient({ product, parentCategory }: Props) {
                         <div className="relative aspect-square w-full">
                             <Image
                                 src={product.image}
-                                alt={product.title}
+                                alt={`${product.title} - Authorized Distributor ${product.category}`}
                                 fill
                                 className="object-contain hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.33,1,0.68,1)]"
                                 priority
@@ -126,7 +126,7 @@ export function ProductDetailClient({ product, parentCategory }: Props) {
                     <div className="flex flex-col">
                         <div className="product-meta inline-flex items-center gap-2 px-3 py-1 bg-muted/50 border border-border text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6 self-start">
                             <CheckCircle2 size={12} className="text-primary" />
-                            {product.category}
+                            Premium {product.category} Supplier & Distributor
                         </div>
 
                         <h1 className="product-title text-foreground tracking-tighter leading-[1.1] mb-6 text-[clamp(2rem,6vw,4.5rem)]">
@@ -134,7 +134,7 @@ export function ProductDetailClient({ product, parentCategory }: Props) {
                         </h1>
 
                         <p className="product-desc text-lg text-muted-foreground leading-relaxed font-medium mb-10 border-l-2 border-primary/30 pl-6 py-1">
-                            {product.description}
+                            {product.description} As a leading <strong className="text-foreground">authorized distributor</strong> of electrical systems, we ensure this {product.title} meets all industrial standards for safety and performance across Maharashtra.
                         </p>
 
                         <div className="product-price mb-12">

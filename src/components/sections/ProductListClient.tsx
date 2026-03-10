@@ -93,7 +93,7 @@ export function ProductListClient({ allProducts }: Props) {
                             <div className="relative aspect-[4/5] mb-5 bg-white border border-border/60 p-6 overflow-hidden transition-all duration-500 hover:border-primary">
                                 <Image
                                     src={product.image}
-                                    alt={product.title}
+                                    alt={`${product.title} - ${product.category} Authorized Distributor Pune`}
                                     fill
                                     className="object-contain p-8 group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.33,1,0.68,1)]"
                                     unoptimized

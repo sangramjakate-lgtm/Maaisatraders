@@ -53,6 +53,40 @@ export function Footer() {
                     </ul>
                 </div>
 
+                {/* Trending Categories (SEO Linking) */}
+                <div>
+                    <h4 className="text-lg font-heading font-bold text-white mb-4">
+                        Trending Categories
+                    </h4>
+                    <ul className="space-y-3">
+                        <li>
+                            <Link href="/category/fans" className="text-sm text-white/60 hover:text-white transition-colors">
+                                BLDC Energy Saving Fans
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/category/cables-wires" className="text-sm text-white/60 hover:text-white transition-colors">
+                                Industrial Wires & Cables
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/category/switches-switchgear" className="text-sm text-white/60 hover:text-white transition-colors">
+                                Modular Switches & MCBs
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/category/lighting" className="text-sm text-white/60 hover:text-white transition-colors">
+                                LED Commercial Lighting
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/category/air-conditioners" className="text-sm text-white/60 hover:text-white transition-colors">
+                                Premium Air Conditioners
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
                 {/* Reach Us */}
                 <div>
                     <h4 className="text-lg font-heading font-bold text-white mb-4">
@@ -63,17 +97,9 @@ export function Footer() {
                             <MapPin size={16} className="mt-0.5 shrink-0 text-white/40" />
                             <span>
                                 3rd Floor, Office No 301 & 302, 41 Elite, Kalewadi Main Road,
-                                Tathawade, Pimpri Chinchwad, Pune – 411033, Maharashtra
+                                Tathawade, Hinjewadi, Pune – 411033, Maharashtra
                             </span>
                         </li>
-                        {/* <li className="flex items-start gap-3 text-sm text-white/60">
-                            <Building2 size={16} className="shrink-0 text-white/40 mt-1" />
-                            <div className="flex flex-col gap-1">
-                                <span>Sangram Jakate & Nasir Patil (Directors)</span>
-                                <span>Suresh S B (Head of Sales & Marketing)</span>
-                                <span>Chaitali Dhale (Administration Head)</span>
-                            </div>
-                        </li> */}
                         <li className="flex items-center gap-3 text-sm text-white/60">
                             <Mail size={16} className="shrink-0 text-white/40" />
                             <a href="mailto:info@maaisatraders.com" className="hover:text-white transition-colors">
@@ -100,8 +126,18 @@ export function Footer() {
 
             {/* Bottom Bar */}
             <div className="container-custom mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
-                <p>&copy; {new Date().getFullYear()} Maaisa Traders India Pvt. Ltd. All rights reserved.</p>
-                <p className="mt-2 md:mt-0">A Limited Company — Distributor and Service Provider</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 mb-4 md:mb-0">
+                    <span className="opacity-50">Authorized Distributor for:</span>
+                    <span>Havells</span>
+                    <span>Legrand</span>
+                    <span>Polycab</span>
+                    <span>Usha</span>
+                    <span>Orient</span>
+                </div>
+                <div className="text-right">
+                    <p>&copy; {new Date().getFullYear()} Maaisa Traders India Pvt. Ltd. All rights reserved.</p>
+                    <p className="mt-1">Authorized Electrical Goods Distributor Pune & Maharashtra</p>
+                </div>
             </div>
         </footer>
     );
